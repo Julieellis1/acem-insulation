@@ -1,0 +1,2086 @@
+<!doctype html>
+<html lang="en-CA">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>ACEM Insulation · Edmonton Insulation &amp; Fireproofing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&family=Poppins:wght@600;700&family=Open+Sans:wght@400;600;700&display=swap"
+    />
+    <link rel="stylesheet" href="hark.css" />
+    <link rel="stylesheet" href="hark-hero.css" />
+    <style>
+      /* ============ 1. Tokens ============ */
+      .x-site {
+        --x-navy: #000f3c;
+        --x-navy-deep: #00081f;
+        --x-orange: #ff5e14;
+        --x-orange-hover: #e24e08;
+        --x-orange-ink: #c2410c; /* orange for small text on light grounds (AA) */
+        --x-grey: #f3f5f9;
+        --x-line: #e3e7ef;
+        --x-body: #5b6275;
+        --x-head: "Poppins", var(--sans), sans-serif;
+        --x-text: "Open Sans", var(--sans), sans-serif;
+        --x-wrap: 1200px;
+        --x-pad: clamp(20px, 4vw, 40px);
+        --x-ease: cubic-bezier(0.22, 1, 0.36, 1);
+        --x-shadow: 0 18px 40px -18px rgba(0, 15, 60, 0.35);
+        --x-head-h: 84px;
+      }
+
+      /* ============ 2. Base ============ */
+      .page.x-site {
+        max-width: none; padding: 0; display: block; gap: 0;
+        background: #fff; color: var(--x-body);
+        font: 400 16px/1.7 var(--x-text);
+      }
+      .x-site h1, .x-site h2, .x-site h3, .x-site h4 {
+        font-family: var(--x-head); color: var(--x-navy); line-height: 1.15; letter-spacing: -0.01em;
+      }
+      .x-site h1 { font-weight: 700; font-size: clamp(40px, 6.4vw, 76px); letter-spacing: -0.025em; }
+      .x-site h2 { font-weight: 700; font-size: clamp(30px, 4vw, 46px); letter-spacing: -0.02em; }
+      .x-site h3 { font-weight: 600; font-size: 21px; }
+      .x-site p { margin: 0; }
+      .x-site a { text-decoration: none; }
+      .x-site :focus-visible { outline: 2px solid var(--x-orange); outline-offset: 3px; }
+      .x-wrap { max-width: var(--x-wrap); margin: 0 auto; padding-inline: var(--x-pad); }
+      .x-sec { padding-block: clamp(72px, 10vw, 120px); }
+      .x-sec--grey { background: var(--x-grey); }
+      .x-dark { background-color: var(--x-navy); color: rgba(255, 255, 255, 0.78); }
+      .x-dark h1, .x-dark h2, .x-dark h3 { color: #fff; }
+      .x-blueprint {
+        background-color: var(--x-navy);
+        background-image:
+          linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px),
+          linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+        background-size: 96px 96px, 96px 96px, 24px 24px, 24px 24px;
+        background-position: -1px -1px;
+      }
+
+      /* Eyebrow + rule */
+      .x-eyebrow {
+        display: inline-flex; align-items: center; gap: 12px;
+        font: 700 13px/1.3 var(--x-head); letter-spacing: 0.16em; text-transform: uppercase;
+        color: var(--x-orange-ink); margin-bottom: 18px;
+      }
+      .x-eyebrow::before { content: ""; width: 36px; height: 2px; background: var(--x-orange); }
+      .x-dark .x-eyebrow, .x-hero .x-eyebrow, .x-banner .x-eyebrow { color: var(--x-orange); }
+      .x-lede { font-size: 18px; max-width: 60ch; margin-top: 20px; }
+      .x-head { max-width: 760px; margin-bottom: clamp(40px, 6vw, 64px); }
+      .x-head--center { margin-inline: auto; text-align: center; }
+      .x-head--center .x-lede { margin-inline: auto; }
+
+      /* Buttons */
+      .x-btns { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
+      .x-btn {
+        display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+        min-height: 54px; padding: 0 28px; border-radius: 2px;
+        font: 600 15px/1 var(--x-head); letter-spacing: 0.02em;
+        background: var(--x-orange); color: var(--x-navy); border: 2px solid var(--x-orange);
+        transition: background var(--dur-quick) ease, border-color var(--dur-quick) ease, color var(--dur-quick) ease, transform 0.3s var(--x-ease);
+      }
+      .x-btn:hover { background: var(--x-orange-hover); border-color: var(--x-orange-hover); transform: translateY(-2px); }
+      .x-btn svg { width: 16px; height: 16px; transition: transform 0.3s var(--x-ease); }
+      .x-btn:hover svg { transform: translateX(4px); }
+      .x-btn--ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,0.45); }
+      .x-btn--ghost:hover { background: #fff; color: var(--x-navy); border-color: #fff; }
+      .x-btn--navy { background: var(--x-navy); color: #fff; border-color: var(--x-navy); }
+      .x-btn--navy:hover { background: var(--x-navy-deep); border-color: var(--x-navy-deep); }
+      .x-textlink {
+        display: inline-flex; align-items: center; gap: 8px; min-height: 44px;
+        font: 600 15px/1 var(--x-head); color: var(--x-navy);
+      }
+      .x-textlink svg { width: 16px; height: 16px; color: var(--x-orange); transition: transform 0.3s var(--x-ease); }
+      .x-textlink:hover svg { transform: translateX(4px); }
+
+      /* ============ 3. Header ============ */
+      .x-mast { position: fixed; inset: 0 0 auto; z-index: 50; background-color: rgba(0, 15, 60, 0.82); transition: background 0.35s ease, box-shadow 0.35s ease; }
+      .x-top {
+        background: var(--x-navy-deep); color: rgba(255,255,255,0.75); font-size: 13px;
+        max-height: 48px; overflow: hidden; transition: max-height 0.35s var(--x-ease);
+      }
+      .x-top .x-wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 44px; }
+      .x-top__links { display: flex; gap: 24px; }
+      .x-top a { color: #fff; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; }
+      .x-top a:hover { color: var(--x-orange); }
+      .x-top svg { width: 14px; height: 14px; color: var(--x-orange); }
+      .x-bar { border-bottom: 1px solid rgba(255,255,255,0.14); transition: border-color 0.35s ease; }
+      .x-bar .x-wrap { display: flex; align-items: center; gap: 28px; height: var(--x-head-h); }
+      .x-mast.is-solid { background: var(--x-navy); box-shadow: 0 10px 30px -12px rgba(0,8,31,0.6); }
+      .x-mast.is-solid .x-top { max-height: 0; }
+      .x-mast.is-solid .x-bar { border-color: transparent; }
+      .x-logo { display: inline-flex; color: #fff; flex: none; min-height: 44px; align-items: center; }
+      .x-logo svg { width: 150px; height: 46px; }
+      .x-menu { display: flex; align-items: center; gap: 4px; margin-left: auto; }
+      .x-menu a:not(.x-btn) {
+        position: relative; display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px;
+        font: 600 15px/1 var(--x-head); color: #fff;
+      }
+      .x-menu a:not(.x-btn)::after {
+        content: ""; position: absolute; left: 12px; right: 12px; bottom: 6px; height: 2px;
+        background: var(--x-orange); transform: scaleX(0); transform-origin: left; transition: transform 0.3s var(--x-ease);
+      }
+      .x-menu a:not(.x-btn):hover::after, .x-menu a[aria-current="page"]::after { transform: scaleX(1); }
+      .x-menu a[aria-current="page"] { color: #fff; }
+      .x-menu .x-btn { margin-left: 14px; min-height: 48px; padding: 0 22px; }
+      .x-burger {
+        display: none; margin-left: auto; width: 48px; height: 48px; border: 1px solid rgba(255,255,255,0.3);
+        background: transparent; color: #fff; border-radius: 2px; cursor: pointer; align-items: center; justify-content: center;
+      }
+      .x-burger span, .x-burger span::before, .x-burger span::after {
+        display: block; width: 20px; height: 2px; background: currentColor; position: relative; transition: transform 0.3s var(--x-ease), background 0.2s;
+      }
+      .x-burger span::before, .x-burger span::after { content: ""; position: absolute; left: 0; }
+      .x-burger span::before { top: -6px; } .x-burger span::after { top: 6px; }
+      .x-mast.is-open .x-burger span { background: transparent; }
+      .x-mast.is-open .x-burger span::before { transform: translateY(6px) rotate(45deg); }
+      .x-mast.is-open .x-burger span::after { transform: translateY(-6px) rotate(-45deg); }
+
+      @media (max-width: 1080px) {
+        .x-burger { display: inline-flex; }
+        .x-menu {
+          position: fixed; inset: var(--x-menu-top, 128px) 0 auto; margin: 0; flex-direction: column; align-items: stretch; gap: 0;
+          background: var(--x-navy); padding: 12px var(--x-pad) 28px; border-top: 1px solid rgba(255,255,255,0.12);
+          max-height: calc(100svh - var(--x-menu-top, 128px)); overflow-y: auto;
+          opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 0.25s ease, transform 0.3s var(--x-ease), visibility 0.25s;
+        }
+        .x-mast.is-open .x-menu { opacity: 1; visibility: visible; transform: none; }
+        .x-mast.is-open { background: var(--x-navy); }
+        .x-menu a:not(.x-btn) { min-height: 54px; padding: 0; font-size: 18px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .x-menu a:not(.x-btn)::after { display: none; }
+        .x-menu .x-btn { margin: 20px 0 0; }
+      }
+      @media (max-width: 720px) {
+        .x-top__hours { display: none; }
+        .x-top .x-wrap { justify-content: center; }
+        .x-top__links { gap: 18px; }
+        .x-site { --x-head-h: 72px; }
+        .x-logo svg { width: 128px; height: 40px; }
+      }
+      @media (max-width: 420px) { .x-top__mail span { display: none; } .x-top a.x-top__mail { min-width: 44px; justify-content: center; } .x-top a.x-top__mail svg { width: 18px; height: 18px; } }
+
+      /* ============ 4. Routing ============ */
+      [data-page][hidden] { display: none !important; }
+
+      /* ============ 5. Heroes ============ */
+      .x-hero, .x-banner { position: relative; overflow: hidden; background: var(--x-navy); isolation: isolate; }
+      .x-hero__img, .x-banner__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+      .x-hero::before, .x-banner::before { content: ""; position: absolute; inset: 0; z-index: -1; }
+      .x-hero::before {
+        background: linear-gradient(100deg, rgba(0,8,31,0.94) 0%, rgba(0,15,60,0.82) 42%, rgba(0,15,60,0.35) 75%, rgba(0,15,60,0.2) 100%),
+          linear-gradient(0deg, rgba(0,8,31,0.7), transparent 40%);
+      }
+      .x-hero { min-height: max(680px, 100svh); display: flex; align-items: center; color: rgba(255,255,255,0.85); }
+      .x-hero .x-wrap { width: 100%; padding-top: calc(var(--x-head-h) + 80px); padding-bottom: 96px; }
+      .x-hero h1 { color: #fff; max-width: 12ch; }
+      .x-hero h1 em { font-style: normal; color: var(--x-orange); }
+      .x-hero__sub { font-size: clamp(17px, 1.6vw, 20px); max-width: 52ch; margin-top: 24px; }
+      .x-rating {
+        position: absolute; right: var(--x-pad); bottom: 48px; display: flex; align-items: center; gap: 14px;
+        padding: 16px 22px; color: #fff; border: 1px solid rgba(255,255,255,0.22); border-radius: 4px;
+        background-color: rgba(0, 15, 60, 0.78); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+      }
+      .x-rating__score { font: 700 30px/1 var(--x-head); }
+      .x-rating__stars { color: var(--x-orange); letter-spacing: 2px; font-size: 14px; }
+      .x-rating__meta { font-size: 13px; line-height: 1.4; }
+      @media (max-width: 720px) { .x-rating { position: static; margin-top: 40px; display: inline-flex; } }
+
+      .x-banner::before { background: linear-gradient(90deg, rgba(0,8,31,0.92), rgba(0,15,60,0.7) 60%, rgba(0,15,60,0.45)); }
+      .x-banner .x-wrap { padding-top: calc(var(--x-head-h) + 110px); padding-bottom: 88px; }
+      .x-banner h1 { color: #fff; font-size: clamp(38px, 5.4vw, 64px); }
+      .x-crumbs { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; font: 600 14px/1 var(--x-head); color: rgba(255,255,255,0.7); }
+      .x-crumbs a { color: #fff; min-height: 44px; display: inline-flex; align-items: center; }
+      .x-crumbs a:hover { color: var(--x-orange); }
+      .x-crumbs li { display: inline-flex; align-items: center; gap: 10px; }
+      .x-crumbs li + li::before { content: "/"; color: var(--x-orange); }
+      .x-crumbs ol { display: contents; list-style: none; }
+
+      /* ============ 6. Shared blocks ============ */
+      /* Zoomable media */
+      .x-zoom { overflow: hidden; }
+      .x-zoom img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.9s var(--x-ease); }
+      .x-zoom:hover img, a:hover .x-zoom img, a:focus-visible .x-zoom img { transform: scale(1.06); }
+
+      /* Lift cards */
+      .x-lift { transition: transform 0.4s var(--x-ease), box-shadow 0.4s var(--x-ease); }
+      .x-lift:hover { transform: translateY(-6px); box-shadow: var(--x-shadow); }
+
+      /* Path cards */
+      .x-paths { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+      .x-path { position: relative; display: block; min-height: 460px; color: #fff; background: var(--x-navy); isolation: isolate; }
+      .x-path .x-zoom { position: absolute; inset: 0; z-index: -2; }
+      .x-path::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(0deg, rgba(0,8,31,0.95) 0%, rgba(0,15,60,0.55) 50%, rgba(0,15,60,0.1) 100%); }
+      .x-path__body { position: absolute; inset: auto 0 0; padding: clamp(28px, 4vw, 44px); }
+      .x-path__num { font: 700 14px/1 var(--x-head); color: var(--x-orange); letter-spacing: 0.12em; }
+      .x-path h3 { color: #fff; font-size: clamp(26px, 3vw, 34px); font-weight: 700; margin: 14px 0 10px; }
+      .x-path p { color: rgba(255,255,255,0.82); max-width: 42ch; }
+      .x-path__go { display: inline-flex; align-items: center; gap: 10px; margin-top: 22px; font: 600 15px/1 var(--x-head); padding-bottom: 6px; border-bottom: 2px solid var(--x-orange); }
+      .x-path__go svg { width: 16px; height: 16px; transition: transform 0.3s var(--x-ease); }
+      .x-path:hover .x-path__go svg { transform: translateX(5px); }
+      @media (max-width: 820px) { .x-paths { grid-template-columns: 1fr; } .x-path { min-height: 400px; } }
+
+      /* Service cards */
+      .x-services { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 20px; }
+      .x-service { position: relative; background: #fff; padding: 36px 28px 32px; border-bottom: 3px solid transparent; }
+      .x-service:hover { border-bottom-color: var(--x-orange); }
+      .x-service__icon { width: 60px; height: 60px; display: grid; place-items: center; background: var(--x-grey); color: var(--x-orange); margin-bottom: 26px; transition: background 0.3s, color 0.3s; }
+      .x-service:hover .x-service__icon { background: var(--x-navy); }
+      .x-service__icon svg { width: 30px; height: 30px; }
+      .x-service__num { position: absolute; top: 28px; right: 26px; font: 700 14px/1 var(--x-head); color: #6b7489; }
+      .x-service h3 { font-size: 19px; margin-bottom: 10px; }
+      .x-service p { font-size: 15px; }
+      .x-services__foot { display: flex; flex-wrap: wrap; gap: 8px 28px; margin-top: 36px; }
+
+      /* Split: image + copy */
+      .x-split { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(40px, 6vw, 88px); align-items: center; }
+      .x-split--flip .x-split__media { order: 2; }
+      .x-split__media { position: relative; }
+      .x-split__media .x-zoom { aspect-ratio: 4 / 4.4; }
+      .x-split__media::after { content: ""; position: absolute; z-index: -1; width: 46%; height: 46%; border: 2px solid var(--x-orange); left: -20px; bottom: -20px; }
+      .x-split--flip .x-split__media::after { left: auto; right: -20px; }
+      .x-split__media { isolation: isolate; }
+      .x-split__tag { position: absolute; right: 0; bottom: 0; background: var(--x-navy); color: #fff; padding: 22px 26px; max-width: 260px; font-size: 14px; line-height: 1.5; }
+      .x-split__tag b { display: block; font: 700 22px/1.2 var(--x-head); color: var(--x-orange); margin-bottom: 4px; }
+      .x-split--flip .x-split__tag { right: auto; left: 0; }
+      .x-split p + p { margin-top: 16px; }
+      @media (max-width: 900px) {
+        .x-split { grid-template-columns: 1fr; }
+        .x-split--flip .x-split__media { order: 0; }
+        .x-split__media .x-zoom { aspect-ratio: 4 / 3; }
+        .x-split__media::after { display: none; }
+      }
+
+      /* Tick list */
+      .x-ticks { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 16px; }
+      .x-ticks li { display: grid; grid-template-columns: 28px 1fr; gap: 14px; }
+      .x-ticks li::before {
+        content: ""; width: 28px; height: 28px; border-radius: 50%; background: var(--x-orange) no-repeat center / 14px
+          url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3 3 7-7' fill='none' stroke='%23000f3c' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      }
+      .x-ticks b { display: block; color: var(--x-navy); font-family: var(--x-head); font-weight: 600; }
+
+      /* Numbered steps */
+      .x-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; counter-reset: x; border-top: 1px solid rgba(255,255,255,0.14); }
+      .x-step { position: relative; padding: 44px 28px 8px 0; }
+      .x-step + .x-step { padding-left: 28px; border-left: 1px solid rgba(255,255,255,0.14); }
+      .x-step::before { content: ""; position: absolute; top: -1px; left: 0; width: 0; height: 2px; background: var(--x-orange); transition: width 0.9s var(--x-ease); }
+      .x-step.is-in::before { width: 56px; }
+      .x-step + .x-step::before { left: 28px; }
+      .x-step__num { font: 700 56px/1 var(--x-head); color: var(--x-orange); margin-bottom: 22px; }
+      .x-step h3 { font-size: 20px; margin-bottom: 10px; }
+      .x-step p { font-size: 15px; }
+      @media (max-width: 980px) {
+        .x-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .x-step:nth-child(3) { border-left: 0; padding-left: 0; }
+        .x-step:nth-child(3)::before { left: 0; }
+      }
+      @media (max-width: 560px) {
+        .x-steps { grid-template-columns: 1fr; }
+        .x-step + .x-step { border-left: 0; padding-left: 0; border-top: 1px solid rgba(255,255,255,0.14); }
+        .x-step + .x-step::before { left: 0; }
+      }
+
+      /* Stats */
+      .x-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .x-stat { padding: 8px 28px; border-left: 1px solid var(--x-line); }
+      .x-stat:first-child { border-left: 0; padding-left: 0; }
+      .x-stat__fig { display: block; font: 700 clamp(44px, 5vw, 64px)/1 var(--x-head); color: var(--x-navy); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+      .x-stat__fig sup { font-size: 0.5em; color: var(--x-orange-ink); vertical-align: 0.7em; margin-left: 2px; }
+      .x-stat__label { display: block; margin-top: 14px; padding-top: 14px; border-top: 2px solid var(--x-orange); width: fit-content; font: 600 14px/1.4 var(--x-head); color: var(--x-navy); text-transform: uppercase; letter-spacing: 0.08em; }
+      @media (max-width: 820px) {
+        .x-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 40px; }
+        .x-stat:nth-child(3) { border-left: 0; padding-left: 0; }
+      }
+
+      /* Reviews */
+      .x-quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+      .x-quote { position: relative; background: #fff; padding: 44px 34px 34px; display: flex; flex-direction: column; }
+      .x-quote::before { content: "\201C"; position: absolute; top: 18px; right: 28px; font: 700 90px/1 var(--x-head); color: var(--x-grey); }
+      .x-quote__stars { color: var(--x-orange-ink); letter-spacing: 3px; font-size: 15px; }
+      .x-quote blockquote { margin: 18px 0 28px; font-size: 17px; line-height: 1.65; color: var(--x-navy); flex: 1; position: relative; }
+      .x-quote figcaption { display: flex; align-items: center; gap: 12px; padding-top: 20px; border-top: 1px solid var(--x-line); font: 600 14px/1 var(--x-head); color: var(--x-navy); }
+      .x-quote figcaption svg { width: 22px; height: 22px; flex: none; }
+      @media (max-width: 900px) { .x-quotes { grid-template-columns: 1fr; } }
+
+      /* Rebate teaser */
+      .x-teaser { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 32px 44px; align-items: center; padding: clamp(32px, 5vw, 56px); border: 1px solid var(--x-line); border-left: 4px solid var(--x-orange); background: #fff; }
+      .x-teaser__icon { width: 76px; height: 76px; display: grid; place-items: center; background: var(--x-navy); color: var(--x-orange); }
+      .x-teaser__icon svg { width: 38px; height: 38px; }
+      .x-teaser h2 { font-size: clamp(24px, 2.8vw, 32px); }
+      .x-teaser p { margin-top: 10px; }
+      @media (max-width: 860px) { .x-teaser { grid-template-columns: 1fr; } }
+
+      /* CTA band */
+      .x-cta { position: relative; overflow: hidden; }
+      .x-cta .x-wrap { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 32px 56px; align-items: center; }
+      .x-cta h2 { max-width: 18ch; }
+      .x-cta .x-btns { margin-top: 0; }
+      .x-cta__phone { display: inline-flex; align-items: center; gap: 14px; margin-top: 22px; color: #fff; font: 600 20px/1 var(--x-head); min-height: 44px; }
+      .x-cta__phone svg { width: 22px; height: 22px; color: var(--x-orange); }
+      .x-cta__phone:hover { color: var(--x-orange); }
+      @media (max-width: 860px) { .x-cta .x-wrap { grid-template-columns: 1fr; } }
+
+      /* Inner page intro */
+      .x-intro { display: grid; grid-template-columns: 80px minmax(0, 1fr); gap: 28px; max-width: 900px; }
+      .x-intro__rule { width: 80px; height: 2px; background: var(--x-orange); margin-top: 16px; }
+      .x-intro p { font-size: clamp(18px, 1.9vw, 22px); line-height: 1.65; color: var(--x-navy); }
+      .x-intro .x-btns { margin-top: 32px; }
+      .x-intro__links { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 4px 28px; }
+      @media (max-width: 640px) { .x-intro { grid-template-columns: 1fr; gap: 16px; } .x-intro__rule { margin: 0; } }
+
+      /* ============ 6b. Stage 2 blocks ============ */
+      /* Numbered feature blocks */
+      .x-feats { display: grid; gap: clamp(72px, 10vw, 128px); }
+      .x-feat__num { font: 700 clamp(56px, 6vw, 76px)/1 var(--x-head); color: transparent; -webkit-text-stroke: 2px var(--x-orange); letter-spacing: -0.02em; margin-bottom: 18px; }
+      .x-feat h2 { font-size: clamp(28px, 3.4vw, 40px); }
+      .x-feat .x-lede { margin-top: 16px; }
+      .x-feat .x-feat__label { margin-top: 30px; font: 700 13px/1.3 var(--x-head); letter-spacing: 0.14em; text-transform: uppercase; color: var(--x-navy); }
+      .x-feat .x-ticks { margin-top: 16px; gap: 12px; }
+      .x-feat .x-ticks li { align-items: start; }
+      .x-feat .x-ticks li span { padding-top: 2px; }
+
+      /* Signs grid */
+      .x-signs { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+      .x-sign { display: grid; grid-template-columns: 44px 1fr; gap: 18px; align-items: center; background: #fff; padding: 26px 26px; border-left: 3px solid var(--x-orange); font: 600 17px/1.4 var(--x-head); color: var(--x-navy); }
+      .x-sign__icon { width: 44px; height: 44px; display: grid; place-items: center; background: var(--x-navy); color: var(--x-orange); }
+      .x-sign__icon svg { width: 20px; height: 20px; }
+      @media (max-width: 960px) { .x-signs { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+      @media (max-width: 600px) { .x-signs { grid-template-columns: 1fr; } }
+
+      /* FAQ accordion */
+      .x-faqs { max-width: 880px; border-top: 1px solid var(--x-line); }
+      .x-faq { border-bottom: 1px solid var(--x-line); }
+      .x-faq summary {
+        list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 24px;
+        min-height: 76px; padding: 18px 0; font: 600 clamp(17px, 1.8vw, 20px)/1.35 var(--x-head); color: var(--x-navy);
+      }
+      .x-faq summary::-webkit-details-marker { display: none; }
+      .x-faq summary:hover { color: var(--x-orange-ink); }
+      .x-faq__icon { position: relative; flex: none; width: 44px; height: 44px; border: 1px solid var(--x-line); background: #fff; transition: background 0.3s, border-color 0.3s; }
+      .x-faq__icon::before, .x-faq__icon::after { content: ""; position: absolute; left: 50%; top: 50%; width: 14px; height: 2px; margin: -1px 0 0 -7px; background: var(--x-navy); transition: transform 0.35s var(--x-ease), background 0.3s; }
+      .x-faq__icon::after { transform: rotate(90deg); }
+      .x-faq[open] .x-faq__icon { background: var(--x-orange); border-color: var(--x-orange); }
+      .x-faq[open] .x-faq__icon::after { transform: rotate(0deg); }
+      .x-faq__a { padding: 0 72px 28px 0; max-width: 68ch; }
+      @media (max-width: 600px) { .x-faq__a { padding-right: 0; } }
+
+      /* Single pull quote */
+      .x-pull { max-width: 900px; margin: 0 auto; text-align: center; }
+      .x-pull__stars { color: var(--x-orange-ink); letter-spacing: 4px; font-size: 18px; }
+      .x-pull blockquote { margin: 22px 0 28px; font: 600 clamp(26px, 3.6vw, 42px)/1.3 var(--x-head); color: var(--x-navy); letter-spacing: -0.015em; }
+      .x-pull figcaption { display: inline-flex; align-items: center; gap: 12px; font: 600 15px/1 var(--x-head); color: var(--x-navy); }
+      .x-pull figcaption svg { width: 22px; height: 22px; }
+
+      /* Tag line under intros */
+      .x-intro .x-tagline, .x-tagline { font-size: 14px; display: inline-flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 24px; padding: 10px 16px; border: 1px solid var(--x-line); font: 600 14px/1.4 var(--x-head); color: var(--x-navy); }
+      .x-tagline::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--x-orange); }
+
+      /* Why grid (dark) */
+      .x-why { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+      .x-why__item { padding: 34px 28px; border: 1px solid rgba(255,255,255,0.14); background: rgba(0,8,31,0.35); }
+      .x-why__icon { width: 52px; height: 52px; display: grid; place-items: center; border: 1px solid rgba(255,94,20,0.5); color: var(--x-orange); margin-bottom: 24px; }
+      .x-why__icon svg { width: 26px; height: 26px; }
+      .x-why h3 { font-size: 19px; }
+      @media (max-width: 980px) { .x-why { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+      @media (max-width: 560px) { .x-why { grid-template-columns: 1fr; } }
+
+      /* Forms */
+      .x-formgrid { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: clamp(40px, 6vw, 80px); align-items: start; }
+      @media (max-width: 960px) { .x-formgrid { grid-template-columns: 1fr; } }
+      .x-form { position: relative; background: #fff; border-top: 4px solid var(--x-orange); box-shadow: var(--x-shadow); padding: clamp(28px, 4vw, 48px); scroll-margin-top: calc(var(--x-head-h) + 24px); }
+      .x-form__title { font-size: clamp(24px, 2.6vw, 30px); }
+      .x-form__sub { margin-top: 8px; font-size: 15px; }
+      .x-form__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 20px; margin-top: 32px; }
+      .x-field { display: grid; gap: 8px; align-content: start; min-width: 0; }
+      .x-field--full { grid-column: 1 / -1; }
+      @media (max-width: 600px) { .x-form__grid { grid-template-columns: 1fr; } }
+      .x-field > label, .x-field legend { font: 600 14px/1.3 var(--x-head); color: var(--x-navy); padding: 0; }
+      .x-field .x-req { color: var(--x-orange-ink); }
+      .x-field .x-opt-note { font-weight: 400; color: #6b7489; }
+      .x-field fieldset { border: 0; margin: 0; padding: 0; min-width: 0; display: grid; gap: 10px; }
+      .x-input {
+        width: 100%; min-height: 52px; padding: 12px 16px; border: 1px solid #c9cfdb; border-radius: 2px; background: #fff;
+        font: 400 16px/1.4 var(--x-text); color: var(--x-navy); transition: border-color 0.2s, box-shadow 0.2s;
+      }
+      textarea.x-input { min-height: 128px; resize: vertical; }
+      select.x-input { appearance: none; -webkit-appearance: none; padding-right: 44px; background: #fff no-repeat right 16px center / 14px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 6l5 5 5-5' fill='none' stroke='%23000f3c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); }
+      .x-input::placeholder { color: #8a92a6; }
+      .x-input:hover { border-color: #9aa3b7; }
+      .x-site .x-input:focus-visible, .x-input:focus { outline: none; border-color: var(--x-orange); box-shadow: 0 0 0 3px rgba(255,94,20,0.18); }
+      .x-input[aria-invalid="true"] { border-color: #c0262d; }
+      .x-err { display: none; font-size: 13px; line-height: 1.4; color: #b4232a; font-weight: 600; }
+      .x-field.is-bad .x-err { display: block; }
+      .x-opts { display: flex; flex-wrap: wrap; gap: 10px; }
+      .x-opt { position: relative; display: inline-flex; }
+      .x-opt input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+      .x-opt span {
+        display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border: 1px solid #c9cfdb; border-radius: 2px;
+        font: 600 14px/1.2 var(--x-head); color: var(--x-navy); background: #fff; transition: background 0.2s, border-color 0.2s, color 0.2s;
+      }
+      .x-opt:hover span { border-color: var(--x-navy); }
+      .x-opt input:checked + span { background: var(--x-navy); border-color: var(--x-navy); color: #fff; }
+      .x-opt input:checked + span::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--x-orange); }
+      .x-opt input:focus-visible + span { outline: 2px solid var(--x-orange); outline-offset: 2px; }
+      .x-fieldset-bad .x-opt span { border-color: #c0262d; }
+      .x-check { display: grid; grid-template-columns: 24px 1fr; gap: 12px; align-items: start; min-height: 44px; padding: 14px 16px; background: var(--x-grey); cursor: pointer; font-size: 15px; color: var(--x-navy); }
+      .x-check input { width: 20px; height: 20px; margin: 2px 0 0; accent-color: var(--x-orange); cursor: pointer; }
+      .x-check b { font-family: var(--x-head); font-weight: 600; }
+      .x-note { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; border-left: 3px solid var(--x-orange); background: var(--x-grey); font-size: 15px; color: var(--x-navy); }
+      .x-note svg { width: 18px; height: 18px; flex: none; margin-top: 3px; color: var(--x-orange-ink); }
+      .x-note a { color: var(--x-navy); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+      .x-form__foot { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; margin-top: 30px; }
+      .x-form__foot .x-btn { cursor: pointer; }
+      .x-form__fine { font-size: 13px; color: #6b7489; max-width: 40ch; }
+      .x-form__alert { display: none; margin-top: 24px; padding: 14px 16px; background: #fdecec; color: #8f1d22; font-weight: 600; font-size: 14px; }
+      .x-form__alert.is-on { display: block; }
+      .x-success { display: none; text-align: center; padding: clamp(20px, 4vw, 40px) 0; }
+      .x-form.is-sent .x-success { display: block; }
+      .x-form.is-sent form { display: none; }
+      .x-success__icon { width: 76px; height: 76px; margin: 0 auto 24px; border-radius: 50%; display: grid; place-items: center; background: var(--x-orange); color: var(--x-navy); }
+      .x-success__icon svg { width: 34px; height: 34px; }
+      .x-success h3 { font-size: clamp(24px, 2.6vw, 30px); }
+      .x-success p { margin: 12px auto 0; max-width: 46ch; }
+      .x-success .x-btns { justify-content: center; margin-top: 28px; }
+
+      /* Contact cards */
+      .x-ccards { display: grid; gap: 14px; margin-top: 36px; }
+      .x-ccard { display: grid; grid-template-columns: 52px 1fr; gap: 18px; align-items: center; padding: 20px 22px; background: var(--x-grey); border-left: 3px solid transparent; color: var(--x-body); transition: border-color 0.3s, background 0.3s, transform 0.4s var(--x-ease); }
+      a.x-ccard:hover { border-left-color: var(--x-orange); background: #eaeef5; transform: translateX(4px); }
+      .x-ccard__icon { width: 52px; height: 52px; display: grid; place-items: center; background: var(--x-navy); color: var(--x-orange); }
+      .x-ccard__icon svg { width: 22px; height: 22px; }
+      .x-ccard__k { display: block; font: 700 12px/1.3 var(--x-head); letter-spacing: 0.14em; text-transform: uppercase; color: var(--x-orange-ink); }
+      .x-ccard__v { display: block; margin-top: 4px; font: 600 17px/1.4 var(--x-head); color: var(--x-navy); overflow-wrap: anywhere; }
+      .x-ccard__hours { display: grid; grid-template-columns: auto 1fr; gap: 2px 14px; margin: 4px 0 0; font: 600 16px/1.5 var(--x-head); color: var(--x-navy); }
+      .x-ccard__hours dd { margin: 0; font-weight: 400; font-family: var(--x-text); }
+
+      /* Map */
+      .x-map { position: relative; aspect-ratio: 21 / 8; min-height: 360px; background: var(--x-grey); border-top: 4px solid var(--x-orange); }
+      .x-map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; filter: grayscale(0.35) contrast(1.05); }
+      @media (max-width: 720px) { .x-map { aspect-ratio: 4 / 3.4; min-height: 0; } }
+      @media (prefers-reduced-motion: reduce) { .x-faq__icon::before, .x-faq__icon::after, .x-ccard { transition: none; } a.x-ccard:hover { transform: none; } }
+
+      /* ============ 6c. Stage 3 blocks ============ */
+      /* Vertical timeline */
+      .x-tl { list-style: none; margin: 0; padding: 0; max-width: 960px; position: relative; }
+      .x-tl::before { content: ""; position: absolute; top: 12px; bottom: 12px; left: 187px; width: 2px; background: var(--x-line); }
+      .x-tl__item { position: relative; display: grid; grid-template-columns: 124px 72px minmax(0, 1fr); gap: 0 28px; align-items: start; padding-bottom: clamp(36px, 5vw, 52px); }
+      .x-tl__item:last-child { padding-bottom: 0; }
+      .x-tl__num { font: 700 clamp(48px, 5vw, 64px)/1 var(--x-head); color: transparent; -webkit-text-stroke: 2px var(--x-orange); letter-spacing: -0.02em; text-align: right; }
+      .x-tl__when { font: 700 clamp(20px, 2.2vw, 26px)/1.15 var(--x-head); color: var(--x-navy); text-align: right; padding-top: 8px; letter-spacing: -0.01em; }
+      .x-tl__icon { position: relative; z-index: 1; width: 72px; height: 72px; display: grid; place-items: center; background: var(--x-navy); color: var(--x-orange); box-shadow: 0 0 0 8px #fff; transition: background 0.3s; }
+      .x-tl__icon svg { width: 30px; height: 30px; }
+      .x-tl__item:hover .x-tl__icon { background: var(--x-orange); color: var(--x-navy); }
+      .x-tl__body { padding-top: 10px; }
+      .x-tl__body h3 { font-size: clamp(20px, 2vw, 24px); margin-bottom: 8px; }
+      .x-tl__body p { max-width: 58ch; }
+      .x-tl__item.is-now .x-tl__icon { background: var(--x-orange); color: var(--x-navy); }
+      .x-sec--grey .x-tl__icon { box-shadow: 0 0 0 8px var(--x-grey); }
+      @media (max-width: 720px) {
+        .x-tl::before { left: 27px; }
+        .x-tl__item { grid-template-columns: 56px minmax(0, 1fr); gap: 4px 20px; }
+        .x-tl__icon { grid-column: 1; grid-row: 1 / span 2; width: 56px; height: 56px; }
+        .x-tl__icon svg { width: 24px; height: 24px; }
+        .x-tl__num, .x-tl__when { grid-column: 2; text-align: left; padding-top: 0; }
+        .x-tl__num { font-size: 40px; }
+        .x-tl__body { grid-column: 2; padding-top: 6px; }
+      }
+
+      /* Two-day cards */
+      .x-days { display: grid; gap: 16px; margin-top: 30px; }
+      .x-day { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 22px; align-items: center; padding: 24px 26px; background: var(--x-grey); border-left: 3px solid var(--x-orange); }
+      .x-day__k { font: 700 13px/1.3 var(--x-head); letter-spacing: 0.14em; text-transform: uppercase; color: var(--x-orange-ink); }
+      .x-day__n { display: block; font: 700 44px/1 var(--x-head); color: var(--x-navy); letter-spacing: -0.02em; margin-top: 4px; }
+      .x-day h3 { font-size: 19px; margin-bottom: 4px; }
+      .x-day p { font-size: 15px; }
+      .x-sec--grey .x-day { background: #fff; }
+
+      /* Story */
+      .x-story { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(32px, 6vw, 88px); align-items: start; }
+      .x-story__body p + p { margin-top: 16px; }
+      .x-story .x-ticks { margin-top: 28px; }
+      @media (max-width: 900px) { .x-story { grid-template-columns: 1fr; } }
+
+      /* Team */
+      .x-team { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+      .x-member { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 26px; align-items: start; background: #fff; padding: clamp(28px, 4vw, 40px); border-top: 4px solid var(--x-orange); }
+      .x-avatar { width: 96px; height: 96px; border-radius: 50%; display: grid; place-items: center; background: var(--x-navy); color: #fff; font: 700 32px/1 var(--x-head); letter-spacing: 0.02em; }
+      .x-avatar svg { width: 42px; height: 42px; color: var(--x-orange); }
+      .x-member__role { display: block; margin-top: 4px; font: 700 12px/1.3 var(--x-head); letter-spacing: 0.14em; text-transform: uppercase; color: var(--x-orange-ink); }
+      .x-member p { margin-top: 14px; font-size: 15px; }
+      @media (max-width: 860px) { .x-team { grid-template-columns: 1fr; } }
+      @media (max-width: 480px) { .x-member { grid-template-columns: 1fr; } }
+
+      /* Trust row */
+      .x-trust { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid var(--x-line); }
+      .x-trust li { display: grid; gap: 6px; align-content: start; padding: 28px 26px; }
+      .x-trust li + li { border-left: 1px solid var(--x-line); }
+      .x-trust__fig { font: 700 26px/1.15 var(--x-head); color: var(--x-navy); letter-spacing: -0.01em; overflow-wrap: anywhere; }
+      .x-trust__fig span { color: var(--x-orange-ink); }
+      .x-trust__k { font: 700 12px/1.3 var(--x-head); letter-spacing: 0.14em; text-transform: uppercase; color: #6b7489; }
+      .x-trust .x-textlink { min-height: 44px; }
+      @media (max-width: 900px) { .x-trust { grid-template-columns: repeat(2, minmax(0, 1fr)); } .x-trust li:nth-child(3) { border-left: 0; } .x-trust li:nth-child(n+3) { border-top: 1px solid var(--x-line); } }
+      @media (max-width: 520px) { .x-trust { grid-template-columns: 1fr; } .x-trust li + li { border-left: 0; border-top: 1px solid var(--x-line); } }
+
+      /* Big rating */
+      .x-score { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+      .x-score__card { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 8px 28px; align-items: center; padding: clamp(28px, 4vw, 44px); border: 1px solid rgba(255,255,255,0.16); background: rgba(0,8,31,0.35); }
+      .x-score__fig { font: 700 clamp(72px, 9vw, 112px)/0.9 var(--x-head); color: #fff; letter-spacing: -0.04em; }
+      .x-score__stars { display: block; color: var(--x-orange); letter-spacing: 4px; font-size: 22px; }
+      .x-score__meta { display: block; margin-top: 8px; font: 600 17px/1.4 var(--x-head); color: #fff; }
+      .x-score__src { display: block; margin-top: 4px; font-size: 14px; color: rgba(255,255,255,0.72); }
+      @media (max-width: 860px) { .x-score { grid-template-columns: 1fr; } }
+
+      /* Masonry quotes */
+      .x-masonry { columns: 3 300px; column-gap: 24px; }
+      .x-masonry .x-quote { break-inside: avoid; margin-bottom: 24px; }
+      .x-quote__date { margin-left: auto; font: 400 13px/1 var(--x-text); color: #6b7489; }
+
+      /* 3-up steps */
+      .x-steps--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      @media (max-width: 980px) {
+        .x-steps--3 { grid-template-columns: 1fr; }
+        .x-steps--3 .x-step + .x-step { border-left: 0; padding-left: 0; border-top: 1px solid rgba(255,255,255,0.14); }
+        .x-steps--3 .x-step + .x-step::before { left: 0; }
+      }
+      @media (prefers-reduced-motion: reduce) { .x-tl__icon { transition: none; } }
+
+      /* ============ 7. Footer ============ */
+      .x-foot { background: var(--x-navy-deep); color: rgba(255,255,255,0.7); font-size: 15px; }
+      .x-foot__strip { background: var(--x-orange); color: var(--x-navy); }
+      .x-foot__strip .x-wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; padding-block: 34px; }
+      .x-foot__strip h2 { font-size: clamp(24px, 3vw, 34px); color: var(--x-navy); }
+      .x-foot__strip p { color: var(--x-navy); margin-top: 6px; }
+      .x-foot__main { display: grid; grid-template-columns: 1.4fr repeat(3, minmax(0, 1fr)); gap: 40px; padding-block: 72px 56px; }
+      .x-foot h3 { color: #fff; font-size: 17px; margin-bottom: 20px; padding-bottom: 14px; position: relative; }
+      .x-foot h3::after { content: ""; position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background: var(--x-orange); }
+      .x-foot ul { list-style: none; margin: 0; padding: 0; }
+      .x-foot li a { display: inline-flex; align-items: center; min-height: 44px; min-width: 44px; color: rgba(255,255,255,0.78); }
+      .x-foot a:hover { color: var(--x-orange); }
+      .x-foot__brand p { margin-top: 18px; max-width: 34ch; }
+      .x-foot__social { display: flex; gap: 10px; margin-top: 24px; }
+      .x-foot__social a { width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,0.2); color: #fff; transition: background 0.25s, border-color 0.25s; }
+      .x-foot__social a:hover { background: var(--x-orange); border-color: var(--x-orange); color: var(--x-navy); }
+      .x-foot__social svg { width: 18px; height: 18px; }
+      .x-foot__hours { display: grid; grid-template-columns: auto auto; justify-content: start; gap: 4px 16px; margin: 0 0 20px; }
+      .x-foot__hours dt { color: #fff; } .x-foot__hours dd { margin: 0; }
+      .x-foot__area { font-size: 14px; line-height: 1.6; }
+      .x-foot__legal { border-top: 1px solid rgba(255,255,255,0.1); }
+      .x-foot__legal .x-wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-block: 24px; font-size: 13px; }
+      .x-foot__legal a { color: rgba(255,255,255,0.7); }
+      @media (max-width: 960px) { .x-foot__main { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+      @media (max-width: 560px) { .x-foot__main { grid-template-columns: 1fr; } }
+
+      /* Floating call (mobile) */
+      .x-fab {
+        position: fixed; right: 18px; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); z-index: 40;
+        display: none; align-items: center; gap: 10px; height: 56px; padding: 0 22px 0 18px; border-radius: 999px;
+        background: var(--x-orange); color: var(--x-navy); font: 600 15px/1 var(--x-head); box-shadow: 0 12px 28px -8px rgba(0,8,31,0.55);
+      }
+      .x-fab svg { width: 20px; height: 20px; }
+      @media (max-width: 720px) { .x-fab { display: inline-flex; } .x-foot__legal .x-wrap { padding-bottom: 96px; } }
+
+      /* ============ 8. Motion ============ */
+      .x-reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s var(--x-ease), transform 0.8s var(--x-ease); }
+      .x-reveal.is-in { opacity: 1; transform: none; }
+      .x-d1 { transition-delay: 0.1s; } .x-d2 { transition-delay: 0.2s; } .x-d3 { transition-delay: 0.3s; } .x-d4 { transition-delay: 0.4s; }
+      @media (prefers-reduced-motion: reduce) {
+        .x-reveal { opacity: 1; transform: none; transition: none; }
+        .x-zoom img, .x-lift, .x-btn, .x-step::before { transition: none !important; }
+        .x-zoom:hover img, a:hover .x-zoom img { transform: none; }
+        .x-lift:hover, .x-btn:hover { transform: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page x-site" id="top">
+      <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="x-wordmark" viewBox="0 0 150 46">
+          <path d="M3 21 L15 10 L27 21" fill="none" stroke="#ff5e14" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M11 30c0-3 3-3 3-6s-3-3-3-6M18 30c0-3 3-3 3-6" fill="none" stroke="#ff5e14" stroke-width="2" stroke-linecap="round" opacity=".85" />
+          <text x="36" y="27" fill="currentColor" font-family="Poppins, sans-serif" font-weight="700" font-size="27" letter-spacing="1">ACEM</text>
+          <text x="37" y="41" fill="currentColor" font-family="Poppins, sans-serif" font-weight="600" font-size="8.6" letter-spacing="3.1" opacity=".8">INSULATION</text>
+        </symbol>
+        <symbol id="x-arrow" viewBox="0 0 16 16"><path d="M1 8h13M9 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></symbol>
+        <symbol id="x-phone" viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" /></symbol>
+        <symbol id="x-g" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.6 12.3c0-.8-.1-1.5-.2-2.3H12v4.3h6a5 5 0 0 1-2.2 3.4v2.8h3.6c2-1.9 3.2-4.7 3.2-8.2z"/><path fill="#34A853" d="M12 23c3 0 5.5-1 7.4-2.7l-3.6-2.8c-1 .7-2.3 1.1-3.8 1.1-2.9 0-5.4-2-6.3-4.6H2v2.9A11 11 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.7 14c-.2-.7-.4-1.3-.4-2s.1-1.4.4-2V7.1H2A11 11 0 0 0 1 12c0 1.8.4 3.4 1.2 4.9L5.7 14z"/><path fill="#EA4335" d="M12 5.4c1.6 0 3.1.6 4.2 1.7l3.2-3.2A11 11 0 0 0 2 7.1L5.7 10c.9-2.7 3.4-4.6 6.3-4.6z"/></symbol>
+        <symbol id="x-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5" fill="none" stroke="currentColor" stroke-width="2" /><path d="M3.5 6l8.5 7 8.5-7" fill="none" stroke="currentColor" stroke-width="2" /></symbol>
+      </svg>
+
+      <header class="x-mast" id="x-mast">
+        <div class="x-top">
+          <div class="x-wrap">
+            <p class="x-top__hours">Serving Edmonton &amp; area · Mon–Sat 8 AM–5 PM</p>
+            <div class="x-top__links">
+              <a href="tel:+17802003136"><svg aria-hidden="true"><use href="#x-phone" /></svg>+1 780-200-3136</a>
+              <a class="x-top__mail" href="mailto:aceminsulation@gmail.com"><svg aria-hidden="true"><use href="#x-mail" /></svg><span>aceminsulation@gmail.com</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="x-bar">
+          <div class="x-wrap">
+            <a class="x-logo" href="#/home" aria-label="ACEM Insulation, home"><svg aria-hidden="true"><use href="#x-wordmark" /></svg></a>
+            <button class="x-burger" type="button" aria-expanded="false" aria-controls="x-menu" aria-label="Open menu"><span></span></button>
+            <nav class="x-menu" id="x-menu" aria-label="Main">
+              <a href="#/home">Home</a>
+              <a href="#/residential">Residential</a>
+              <a href="#/commercial">Commercial</a>
+              <a href="#/process">Process</a>
+              <a href="#/about">About</a>
+              <a href="#/reviews">Reviews</a>
+              <a href="#/rebates">Rebates</a>
+              <a class="x-btn" href="#/contact">Free Assessment</a>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <main id="x-main">
+        <!-- HOME -->
+        <section data-page="home" data-title="ACEM Insulation · Edmonton Insulation &amp; Fireproofing">
+          <div class="x-hero">
+            <img class="x-hero__img" src="hero.jpg" alt="An Edmonton house glowing warm on a winter evening" />
+            <div class="x-wrap">
+              <p class="x-eyebrow">Edmonton Insulation &amp; Fireproofing</p>
+              <h1>Warm homes. <em>Safer buildings.</em></h1>
+              <p class="x-hero__sub">Attic top-ups, basement insulation and commercial fireproofing from an owner-led Edmonton crew rated 5.0★ on Google.</p>
+              <div class="x-btns">
+                <a class="x-btn" href="#/contact">Book a free attic assessment <svg aria-hidden="true"><use href="#x-arrow" /></svg></a>
+                <a class="x-btn x-btn--ghost" href="#/commercial">Commercial enquiries</a>
+              </div>
+              <div class="x-rating" aria-label="Rated 5.0 stars on Google from 45+ reviews">
+                <span class="x-rating__score">5.0</span>
+                <span><span class="x-rating__stars" aria-hidden="true">★★★★★</span><br /><span class="x-rating__meta">Google · 45+ reviews</span></span>
+              </div>
+            </div>
+          </div>
+          <!-- 2. Paths -->
+          <div class="x-sec">
+            <div class="x-wrap">
+              <div class="x-head x-reveal">
+                <p class="x-eyebrow">Two ways we help</p>
+                <h2>One crew for the house you live in and the building you're putting up.</h2>
+              </div>
+              <div class="x-paths">
+                <a class="x-path x-lift x-reveal" href="#/residential">
+                  <div class="x-zoom"><img src="attic.jpg" alt="An installer blowing insulation into an attic" /></div>
+                  <div class="x-path__body">
+                    <p class="x-path__num">01 · Homeowners</p>
+                    <h3>Warmer rooms, lower drafts</h3>
+                    <p>Attic top-ups, blown-in insulation and basement insulation for homes across Edmonton and area.</p>
+                    <span class="x-path__go">Residential services <svg aria-hidden="true"><use href="#x-arrow" /></svg></span>
+                  </div>
+                </a>
+                <a class="x-path x-lift x-reveal x-d1" href="#/commercial">
+                  <div class="x-zoom"><img src="fireproofing.jpg" alt="Fireproofing applied to commercial steel framing" /></div>
+                  <div class="x-path__body">
+                    <p class="x-path__num">02 · General Contractors</p>
+                    <h3>Fireproofing &amp; firestopping</h3>
+                    <p>A responsive sub for commercial projects that need fire protection done right and on schedule.</p>
+                    <span class="x-path__go">Commercial services <svg aria-hidden="true"><use href="#x-arrow" /></svg></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Services -->
+          <div class="x-sec x-sec--grey">
+            <div class="x-wrap">
+              <div class="x-head x-reveal">
+                <p class="x-eyebrow">What we do</p>
+                <h2>Five services, done by the people who quote them.</h2>
+              </div>
+              <div class="x-services">
+                <article class="x-service x-lift x-reveal">
+                  <span class="x-service__num">01</span>
+                  <div class="x-service__icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 15 16 4l13 11" /><path d="M7 12v16h18V12" /><path d="M10 20h12M10 24h12" /></svg></div>
+                  <h3>Attic top-ups</h3>
+                  <p>Bring thin or settled attic insulation back up to a proper depth.</p>
+                </article>
+                <article class="x-service x-lift x-reveal x-d1">
+                  <span class="x-service__num">02</span>
+                  <div class="x-service__icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 22h9l3-3" /><path d="M16 19c2-2 5-2 6 0s4 2 6 0" /><circle cx="20" cy="10" r="1.6" /><circle cx="26" cy="13" r="1.6" /><circle cx="24" cy="6" r="1.6" /><path d="M4 26h24" /></svg></div>
+                  <h3>Blown-in insulation</h3>
+                  <p>Loose-fill blown evenly across the attic, into every corner and bay.</p>
+                </article>
+                <article class="x-service x-lift x-reveal x-d2">
+                  <span class="x-service__num">03</span>
+                  <div class="x-service__icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h24v16H4z" /><path d="M4 12 16 4l12 8" /><path d="M9 17h4v6H9zM19 17h4v6h-4z" /></svg></div>
+                  <h3>Basement removal &amp; replacement</h3>
+                  <p>Old basement insulation stripped out and replaced, typically in two days.</p>
+                </article>
+                <article class="x-service x-lift x-reveal x-d3">
+                  <span class="x-service__num">04</span>
+                  <div class="x-service__icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3s8 7 8 15a8 8 0 0 1-16 0c0-4 2-7 4-9 0 4 2 6 4 6 0-5-2-8 0-12z" /></svg></div>
+                  <h3>Fireproofing</h3>
+                  <p>Fire protection for structural elements on commercial builds.</p>
+                </article>
+                <article class="x-service x-lift x-reveal x-d4">
+                  <span class="x-service__num">05</span>
+                  <div class="x-service__icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h24v20H4z" /><circle cx="16" cy="16" r="5" /><path d="M16 11v10M11 16h10" /></svg></div>
+                  <h3>Firestopping</h3>
+                  <p>Sealing penetrations and joints so fire and smoke can't travel through.</p>
+                </article>
+              </div>
+              <div class="x-services__foot x-reveal">
+                <a class="x-textlink" href="#/residential">Residential services <svg aria-hidden="true"><use href="#x-arrow" /></svg></a>
+                <a class="x-textlink" href="#/commercial">Commercial services <svg aria-hidden="true"><use href="#x-arrow" /></svg></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Cold room -->
+          <div class="x-sec">
+            <div class="x-wrap x-split">
+              <div class="x-split__media x-reveal">
+                <div class="x-zoom"><img src="assessment.jpg" alt="Measuring the depth of attic insulation with a ruler" /></div>
+                <p class="x-split__tag"><b>Free</b>Attic assessment, with photos of what we find.</p>
+              </div>
+              <div class="x-reveal x-d1">
+                <p class="x-eyebrow">The cold-room problem</p>
+                <h2>Cold upstairs bedroom? Look up.</h2>
+                <p class="x-lede">When attic insulation is thin or has been pushed around by wind, heat escapes through the ceiling and the rooms right below it stay cold all winter.</p>
+                <p>We'll come out, measure what's up there and show you photos, so you can see the problem for yourself. The assessment is free.</p>
+                <div class="x-btns"><a class="x-btn" href="#/contact">Book a free attic assessment <svg aria-hidden="true"><use href="#x-arrow" /></svg></a></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Process -->
+          <div class="x-sec x-blueprint x-dark">
+            <div class="x-wrap">
+              <div class="x-head x-reveal">
+                <p class="x-eyebrow">How it works</p>
+                <h2>Four steps. No surprises.</h2>
+              </div>
+              <div class="x-steps">
+                <div class="x-step x-reveal"><p class="x-step__num">01</p><h3>Free assessment with photos</h3><p>We inspect, measure and photograph what you have now.</p></div>
+                <div class="x-step x-reveal x-d1"><p class="x-step__num">02</p><h3>Clear quote</h3><p>A straightforward quote for exactly what the job needs.</p></div>
+                <div class="x-step x-reveal x-d2"><p class="x-step__num">03</p><h3>Protected &amp; installed</h3><p>Your home is covered and guarded before any work starts.</p></div>
+                <div class="x-step x-reveal x-d3"><p class="x-step__num">04</p><h3>Before/after walkthrough</h3><p>We show you the finished work against where it started.</p></div>
+              </div>
+              <div class="x-btns x-reveal"><a class="x-btn x-btn--ghost" href="#/process">See the full process <svg aria-hidden="true"><use href="#x-arrow" /></svg></a></div>
+            </div>
+          </div>
+
+          <!-- 6. Spotless -->
+          <div class="x-sec">
+            <div class="x-wrap x-split x-split--flip">
+              <div class="x-split__media x-reveal">
+                <div class="x-zoom"><img src="clean.jpg" alt="A hallway covered in protective plastic before work begins" /></div>
+              </div>
+              <div class="x-reveal x-d1">
+                <p class="x-eyebrow">Respect for your home</p>
+                <h2>We leave it spotless.</h2>
+                <p class="x-lede">Insulation work is messy. Your house won't be.</p>
+                <ul class="x-ticks">
+                  <li><span><b>Furniture taped off in plastic</b>Everything along the work path is covered and sealed.</span></li>
+                  <li><span><b>Stair-edge guards</b>Stairs and corners protected while we carry gear in and out.</span></li>
+                  <li><span><b>Full cleanup</b>We tidy up before we leave, so the only change you notice is the temperature.</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7. Stats -->
+          <div class="x-sec x-sec--grey">
+            <div class="x-wrap">
+              <div class="x-stats">
+                <div class="x-stat x-reveal"><span class="x-stat__fig"><span data-count="10">10</span><sup>+</sup></span><span class="x-stat__label">Years in the trade</span></div>
+                <div class="x-stat x-reveal x-d1"><span class="x-stat__fig"><span data-count="5.0" data-dec="1">5.0</span><sup>★</sup></span><span class="x-stat__label">Google rating</span></div>
+                <div class="x-stat x-reveal x-d2"><span class="x-stat__fig"><span data-count="45">45</span><sup>+</sup></span><span class="x-stat__label">Reviews</span></div>
+                <div class="x-stat x-reveal x-d3"><span class="x-stat__fig"><span data-count="2">2</span></span><span class="x-stat__label">Days for a typical basement</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 8. Reviews -->
+          <div class="x-sec x-sec--grey" style="padding-top: 0">
+            <div class="x-wrap">
+              <div class="x-head x-reveal">
+                <p class="x-eyebrow">What clients say</p>
+                <h2>In their words.</h2>
+              </div>
+              <div class="x-quotes">
+                <figure class="x-quote x-lift x-reveal">
+                  <span class="x-quote__stars" aria-label="5 stars">★★★★★</span>
+                  <blockquote>“Arnold and his team had it done in two days… took great care to do the job right and left the place spotless.”</blockquote>
+                  <figcaption><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.6 12.3c0-.8-.1-1.5-.2-2.3H12v4.3h6a5 5 0 0 1-2.2 3.4v2.8h3.6c2-1.9 3.2-4.7 3.2-8.2z"/><path fill="#34A853" d="M12 23c3 0 5.5-1 7.4-2.7l-3.6-2.8c-1 .7-2.3 1.1-3.8 1.1-2.9 0-5.4-2-6.3-4.6H2v2.9A11 11 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.7 14c-.2-.7-.4-1.3-.4-2s.1-1.4.4-2V7.1H2A11 11 0 0 0 1 12c0 1.8.4 3.4 1.2 4.9L5.7 14z"/><path fill="#EA4335" d="M12 5.4c1.6 0 3.1.6 4.2 1.7l3.2-3.2A11 11 0 0 0 2 7.1L5.7 10c.9-2.7 3.4-4.6 6.3-4.6z"/></svg>Google review</figcaption>
+                </figure>
+                <figure class="x-quote x-lift x-reveal x-d1">
+                  <span class="x-quote__stars" aria-label="5 stars">★★★★★</span>
+                  <blockquote>“Very prompt in getting back to me. Also did a very clean job… I couldn't tell they had even been here, except for the difference in temperature.”</blockquote>
+                  <figcaption><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.6 12.3c0-.8-.1-1.5-.2-2.3H12v4.3h6a5 5 0 0 1-2.2 3.4v2.8h3.6c2-1.9 3.2-4.7 3.2-8.2z"/><path fill="#34A853" d="M12 23c3 0 5.5-1 7.4-2.7l-3.6-2.8c-1 .7-2.3 1.1-3.8 1.1-2.9 0-5.4-2-6.3-4.6H2v2.9A11 11 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.7 14c-.2-.7-.4-1.3-.4-2s.1-1.4.4-2V7.1H2A11 11 0 0 0 1 12c0 1.8.4 3.4 1.2 4.9L5.7 14z"/><path fill="#EA4335" d="M12 5.4c1.6 0 3.1.6 4.2 1.7l3.2-3.2A11 11 0 0 0 2 7.1L5.7 10c.9-2.7 3.4-4.6 6.3-4.6z"/></svg>Google review</figcaption>
+                </figure>
+                <figure class="x-quote x-lift x-reveal x-d2">
+                  <span class="x-quote__stars" aria-label="5 stars">★★★★★</span>
+                  <blockquote>“Friendly, professional, and prompt service with quality work and competitive pricing. Everything you want from a contractor.”</blockquote>
+                  <figcaption><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.6 12.3c0-.8-.1-1.5-.2-2.3H12v4.3h6a5 5 0 0 1-2.2 3.4v2.8h3.6c2-1.9 3.2-4.7 3.2-8.2z"/><path fill="#34A853" d="M12 23c3 0 5.5-1 7.4-2.7l-3.6-2.8c-1 .7-2.3 1.1-3.8 1.1-2.9 0-5.4-2-6.3-4.6H2v2.9A11 11 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.7 14c-.2-.7-.4-1.3-.4-2s.1-1.4.4-2V7.1H2A11 11 0 0 0 1 12c0 1.8.4 3.4 1.2 4.9L5.7 14z"/><path fill="#EA4335" d="M12 5.4c1.6 0 3.1.6 4.2 1.7l3.2-3.2A11 11 0 0 0 2 7.1L5.7 10c.9-2.7 3.4-4.6 6.3-4.6z"/></svg>Google review</figcaption>
+                </figure>
+              </div>
+              <div class="x-services__foot x-reveal"><a class="x-textlink" href="#/reviews">More reviews <svg aria-hidden="true"><use href="#x-arrow" /></svg></a></div>
+            </div>
+          </div>
+
+          <!-- 9. Rebate teaser -->
+          <div class="x-sec">
+            <div class="x-wrap">
+              <div class="x-teaser x-reveal">
+                <div class="x-teaser__icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h14l6 6v18H6z" /><path d="M20 4v6h6" /><path d="M11 18l3 3 7-7" /></svg></div>
+                <div>
+                  <p class="x-eyebrow">Rebates</p>
+                  <h2>We help you reach the insulation levels rebate programs require.</h2>
+                  <p>Ask about it at your free assessment and we'll plan the work around the levels you need.</p>
+                </div>
+                <a class="x-btn x-btn--navy" href="#/rebates">About rebates <svg aria-hidden="true"><use href="#x-arrow" /></svg></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 10. Final CTA -->
+          <div class="x-sec x-cta x-blueprint x-dark">
+            <div class="x-wrap">
+              <div class="x-reveal">
+                <p class="x-eyebrow">Free, no-pressure assessment</p>
+                <h2>Find out what's really in your attic.</h2>
+                <a class="x-cta__phone" href="tel:+17802003136"><svg aria-hidden="true"><use href="#x-phone" /></svg>+1 780-200-3136</a>
+              </div>
+              <div class="x-btns x-reveal x-d1">
+                <a class="x-btn" href="#/contact">Book a free attic assessment <svg aria-hidden="true"><use href="#x-arrow" /></svg></a>
+                <a class="x-btn x-btn--ghost" href="#/commercial">Commercial enquiries</a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- RESIDENTIAL -->
+        <section data-page="residential" data-title="Residential Insulation · ACEM Insulation" hidden>
+          <div class="x-banner">
+            <img class="x-banner__img" src="attic.jpg" alt="An installer blowing insulation into an attic" />
+            <div class="x-wrap">
+              <p class="x-eyebrow">For homeowners</p>
+              <h1>Residential insulation</h1>
+              <nav aria-label="Breadcrumb" class="x-crumbs"><ol><li><a href="#/home">Home</a></li><li aria-current="page">Residential</li></ol></nav>
+            </div>
+          </div>
+          <div class="x-sec">
+            <div class="x-wrap x-intro x-reveal">
+              <span class="x-intro__rule" aria-hidden="true"></span>
+              <div>
+                <p>Attic top-ups, blown-in insulation and basement insulation removal and replacement for homes across Edmonton and area. Every job starts with a free assessment and photos of what's there now, and ends with a before/after walkthrough and a clean house.</p>
+                <div class="x-btns"><a class="x-btn" href="#/contact">Book a free attic assessment <svg aria-hidden="true"><use href="#x-arrow" /></svg></a></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- R2. Feature blocks -->
+          <div class="x-sec" style="padding-top: 0">
+            <div class="x-wrap x-feats">
+              <article class="x-split x-feat">
+                <div class="x-split__media x-reveal">
+                  <div class="x-zoom"><img src="attic.jpg" alt="An installer topping up insulation across an attic" /></div>
+                  <p class="x-split__tag"><b>Free</b>Attic inspection, with photos of what we find.</p>
+                </div>
+                <div class="x-reveal x-d1">
+                  <p class="x-feat__num" aria-hidden="true">01</p>
+                  <p class="x-eyebrow">Most requested</p>
+                  <h2>Attic insulation top-ups</h2>
+                  <p class="x-lede">Thin, settled or wind-blown attic insulation brought back up to a proper, even depth.</p>
+                  <p class="x-feat__label">What's included</p>
+                  <ul class="x-ticks">
+                    <li><span>Free attic inspection with photos</span></li>
+                    <li><span>Fixing thin, uneven or wind-blown areas</span></li>
+                    <li><span>Topping up to the recommended depth</span></li>
+                    <li><span>Sealing gaps</span></li>
+                    <li><span>Before and after photos</span></li>
+                  </ul>
+                  <div class="x-btns"><a class="x-btn" href="#/contact">Book a free assessment <svg aria-hidden="true"><use href="#x-arrow" /></svg></a></div>
+                </div>
+              </article>
+
+              <article class="x-split x-split--flip x-feat">
+                <div class="x-split__media x-reveal">
+                  <div class="x-zoom"><img src="assessment.jpg" alt="Checking the depth of loose-fill insulation between attic joists" /></div>
+                  <p class="x-split__tag"><b>Often 1 day</b>Fast installs, usually done in a day.</p>
+                </div>
+                <div class="x-reveal x-d1">
+                  <p class="x-feat__num" aria-hidden="true">02</p>
+                  <p class="x-eyebrow">Even coverage</p>
+                  <h2>Blown-in insulation</h2>
+                  <p class="x-lede">Loose-fill blown in evenly between the joists, into every corner and bay.</p>
+                  <p class="x-feat__label">What's included</p>
+                  <ul class="x-ticks">
+                    <li><span>Loose-fill installed evenly between joists</span></li>
+                    <li><span>Fast installs, often done in a day</span></li>
+                    <li><span>Better comfort upstairs, winter and summer</span></li>
+                  </ul>
+                  <div class="x-btns"><a class="x-btn" href="#/contact">Book a free assessment <svg aria-hidden="true"><use href="#x-arrow" /></svg></a></div>
+                </div>
+              </article>
+
+              <article class="x-split x-feat">
+                <div class="x-split__media x-reveal">
+                  <div class="x-zoom"><img src="basement.jpg" alt="New insulation installed along basement walls" /></div>
+                  <p class="x-split__tag"><b>Typically 2 days</b>From tear-out to new vapour barrier.</p>
+                </div>
+                <div class="x-reveal x-d1">
+                  <p class="x-feat__num" aria-hidden="true">03</p>
+                  <p class="x-eyebrow">Start fresh</p>
+                  <h2>Basement insulation removal &amp; replacement</h2>
+                  <p class="x-lede">Old or damp insulation out, the space dried overnight, and new insulation in.</p>
+                  <p class="x-feat__label">What's included</p>
+                  <ul class="x-ticks">
+                    <li><span>Tear-out of old or damp insulation</span></li>
+                    <li><span>A dehumidifier run overnight</span></li>
+                    <li><span>New insulation and vapour barrier installed</span></li>
+                    <li><span>Typically done over 2 days</span></li>
+                  </ul>
+                  <div class="x-btns"><a class="x-btn" href="#/contact">Book a free assessment <svg aria-hidden="true"><use href="#x-arrow" /></svg></a></div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- R3. Signs -->
+          <div class="x-sec x-sec--grey">
+            <div class="x-wrap">
+              <div class="x-head x-reveal">
+                <p class="x-eyebrow">Check your home</p>
+                <h2>Signs you need more insulation</h2>
+                <p class="x-lede">If any of these sound familiar, a free attic assessment will show you why.</p>
+              </div>
+              <ul class="x-signs">
+                <li class="x-sign x-reveal"><span class="x-sign__icon"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" /></svg></span>Cold upstairs bedrooms or bonus rooms</li>
+                <li class="x-sign x-reveal x-d1"><span class="x-sign__icon"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" /></svg></span>Rooms that are hard to heat or cool</li>
+                <li class="x-sign x-reveal x-d2"><span class="x-sign__icon"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" /></svg></span>High heating bills</li>
+                <li class="x-sign x-reveal"><span class="x-sign__icon"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" /></svg></span>Ice dams or frost in the attic</li>
+                <li class="x-sign x-reveal x-d1"><span class="x-sign__icon"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" /></svg></span>Drafts near outlets and baseboards</li>
+                <li class="x-sign x-reveal x-d2"><span class="x-sign__icon"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" /></svg></span>An older home that's never been topped up</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- R4. Protect -->
+          <div class="x-sec">
+            <div class="x-wrap x-split x-split--flip">
+              <div class="x-split__media x-reveal">
+                <div class="x-zoom"><img src="clean.jpg" alt="Furniture and floors covered in protective plastic before work begins" /></div>
+              </div>
+              <div class="x-reveal x-d1">
+                <p class="x-eyebrow">Respect for your home</p>
+                <h2>How we protect your home</h2>
+                <p class="x-lede">Everything along the work path is covered before we start, and cleaned before we leave.</p>
+                <ul class="x-ticks">
+                  <li><span><b>Plastic over furniture</b>Covered and sealed along the work path.</span></li>
+                  <li><span><b>Stair-edge guards</b>Stairs and corners protected while gear goes in and out.</span></li>
+                  <li><span><b>Drop cloths</b>Floors covered wherever we work.</span></li>
+                  <li><span><b>Full cleanup</b>We tidy up before we leave.</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- R5. FAQ -->
+          <div class="x-sec x-sec--grey">
+            <div class="x-wrap">
+              <div class="x-head x-reveal">
+                <p class="x-eyebrow">Questions</p>
+                <h2>Homeowner FAQ</h2>
+              </div>
+              <div class="x-faqs x-reveal">
+                <details class="x-faq">
+                  <summary>How long does an attic top-up take?<span class="x-faq__icon" aria-hidden="true"></span></summary>
+                  <p class="x-faq__a">Usually a day. Assessments are often booked within days of your call.</p>
+                </details>
+                <details class="x-faq">
+                  <summary>Will it be messy?<span class="x-faq__icon" aria-hidden="true"></span></summary>
+                  <p class="x-faq__a">No. We cover furniture and floors, guard the stair edges, and do a full cleanup before we leave.</p>
+                </details>
+                <details class="x-faq">
+                  <summary>Do I need to leave?<span class="x-faq__icon" aria-hidden="true"></span></summary>
+                  <p class="x-faq__a">Usually not. Most homeowners stay home while we work.</p>
+                </details>
+                <details class="x-faq">
+                  <summary>Can you help with rebate requirements?<span class="x-faq__icon" aria-hidden="true"></span></summary>
+                  <p class="x-faq__a">Yes. We help you reach the insulation levels rebate programs require. Mention it at your assessment and we'll plan the work around it. <a class="x-textlink" href="#/rebates" style="display: inline-flex">About rebates <svg aria-hidden="true"><use href="#x-arrow" /></svg></a></p>
+                </details>
+                <details class="x-faq">
+                  <summary>Do you serve my area?<span class="x-faq__icon" aria-hidden="true"></span></summary>
+                  <p class="x-faq__a">We serve Edmonton and surrounding communities, including St. Albert, Spruce Grove, Stony Plain and Sherwood Park.</p>
+                </details>
+              </div>
+            </div>
+          </div>
+
+          <!-- R6. Quote -->
+          <div class="x-sec">
+            <div class="x-wrap">
+              <figure class="x-pull x-reveal">
+                <span class="x-pull__stars" aria-label="5 stars">★★★★★</span>
+                <blockquote>“He came to check on Friday and did the work on Monday.”</blockquote>
+                <figcaption><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.6 12.3c0-.8-.1-1.5-.2-2.3H12v4.3h6a5 5 0 0 1-2.2 3.4v2.8h3.6c2-1.9 3.2-4.7 3.2-8.2z"/><path fill="#34A853" d="M12 23c3 0 5.5-1 7.4-2.7l-3.6-2.8c-1 .7-2.3 1.1-3.8 1.1-2.9 0-5.4-2-6.3-4.6H2v2.9A11 11 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.7 14c-.2-.7-.4-1.3-.4-2s.1-1.4.4-2V7.1H2A11 11 0 0 0 1 12c0 1.8.4 3.4 1.2 4.9L5.7 14z"/><path fill="#EA4335" d="M12 5.4c1.6 0 3.1.6 4.2 1.7l3.2-3.2A11 11 0 0 0 2 7.1L5.7 10c.9-2.7 3.4-4.6 6.3-4.6z"/></svg>Google review</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <!-- R7. CTA -->
+          <div class="x-sec x-cta x-blueprint x-dark">
+            <div class="x-wrap">
+              <div class="x-reveal">
+                <p class="x-eyebrow">Free, no-pressure assessment</p>
+                <h2>See what's in your attic, with photos.</h2>
+                <a class="x-cta__phone" href="tel:+17802003136"><svg aria-hidden="true"><use href="#x-phone" /></svg>+1 780-200-3136</a>
+              </div>
+              <div class="x-btns x-reveal x-d1">
+                <a class="x-btn" href="#/contact">Book a free assessment <svg aria-hidden="true"><use href="#x-arrow" /></svg></a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- COMMERCIAL -->
+        <section data-page="commercial" data-title="Commercial Fireproofing &amp; Firestopping · ACEM Insulation" hidden>
+          <div class="x-banner">
+            <img class="x-banner__img" src="fireproofing.jpg" alt="Fireproofing applied to commercial steel framing" />
+            <div class="x-wrap">
+              <p class="x-eyebrow">For general contractors</p>
+              <h1>Fireproofing &amp; firestopping</h1>
+              <nav aria-label="Breadcrumb" class="x-crumbs"><ol><li><a href="#/home">Home</a></li><li aria-current="page">Commercial</li></ol></nav>
+            </div>
+          </div>
+          <div class="x-sec">
+            <div class="x-wrap x-intro x-reveal">
+              <span class="x-intro__rule" aria-hidden="true"></span>
+              <div>
+                <p>ACEM supports general contractors, builders and property managers as a specialty contractor for fire protection and insulation scopes on commercial projects in Edmonton and area.</p>
+                <p class="x-tagline">On the Procore construction network since June 2024, for bid invitations</p>
+                <div class="x-btns">
+                  <a class="x-btn" href="#/commercial" data-jump="x-bid">Request to bid <svg aria-hidden="true"><use href="#x-arrow" /></svg></a>
+                  <a class="x-btn x-btn--navy" href="tel:+17802003136">Call +1 780-200-3136</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- C2. Scopes -->
+          <div class="x-sec x-sec--grey">
+            <div class="x-wrap">
+              <div class="x-head x-reveal">
+                <p class="x-eyebrow">Our scopes</p>
+                <h2>Three scopes, one accountable sub.</h2>
+              </div>
+              <div class="x-services">
+                <article class="x-service x-lift x-reveal">
+                  <span class="x-service__num">01</span>
+                  <div class="x-service__icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 5h20M6 27h20M16 5v22" /><path d="M10 5v4M22 5v4M10 27v-4M22 27v-4" /></svg></div>
+                  <h3>Spray-applied fireproofing</h3>
+                  <p>Spray-applied fire protection for structural steel.</p>
+                </article>
+                <article class="x-service x-lift x-reveal x-d1">
+                  <span class="x-service__num">02</span>
+                  <div class="x-service__icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h24v20H4z" /><circle cx="16" cy="16" r="5" /><path d="M16 11v10M11 16h10" /></svg></div>
+                  <h3>Firestopping</h3>
+                  <p>Sealing penetrations and joints in fire-rated assemblies.</p>
+                </article>
+                <article class="x-service x-lift x-reveal x-d2">
+                  <span class="x-service__num">03</span>
+                  <div class="x-service__icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 28V10l12-6 12 6v18" /><path d="M4 28h24" /><path d="M9 14h14M9 19h14M9 24h14" /></svg></div>
+                  <h3>Commercial insulation</h3>
+                  <p>Insulation scopes on commercial projects.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <!-- C3. Why -->
+          <div class="x-sec x-blueprint x-dark">
+            <div class="x-wrap">
+              <div class="x-head x-reveal">
+                <p class="x-eyebrow">For GCs</p>
+                <h2>Why GCs work with us</h2>
+              </div>
+              <div class="x-why">
+                <div class="x-why__item x-reveal">
+                  <div class="x-why__icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="17" r="11" /><path d="M16 10v7l4 3M13 3h6" /></svg></div>
+                  <h3>Responsive bid turnaround</h3>
+                </div>
+                <div class="x-why__item x-reveal x-d1">
+                  <div class="x-why__icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 16a9 9 0 0 1 18 0" /><path d="M4 16h24v3H4zM16 7V4" /><path d="M10 24c1.5 2.5 3.5 4 6 4s4.5-1.5 6-4" /></svg></div>
+                  <h3>Owner-led crew on site</h3>
+                </div>
+                <div class="x-why__item x-reveal x-d2">
+                  <div class="x-why__icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3l11 4v8c0 7-5 12-11 14C10 27 5 22 5 15V7z" /><path d="M11 16l4 4 6-7" /></svg></div>
+                  <h3>Clean, protected work areas</h3>
+                </div>
+                <div class="x-why__item x-reveal x-d3">
+                  <div class="x-why__icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 6h22v15H13l-6 5v-5H5z" /><path d="M10 12h12M10 16h8" /></svg></div>
+                  <h3>Clear communication, start to finish</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- C4. Bid form -->
+          <div class="x-sec">
+            <div class="x-wrap x-formgrid">
+              <div class="x-reveal">
+                <p class="x-eyebrow">Request to bid</p>
+                <h2>Send us your project.</h2>
+                <p class="x-lede">Tell us about the job and the scope you need priced. We'll come back to you promptly.</p>
+                <div class="x-ccards">
+                  <a class="x-ccard" href="mailto:aceminsulation@gmail.com"><span class="x-ccard__icon"><svg aria-hidden="true"><use href="#x-mail" /></svg></span><span><span class="x-ccard__k">Drawings</span><span class="x-ccard__v">aceminsulation@gmail.com</span></span></a>
+                  <a class="x-ccard" href="tel:+17802003136"><span class="x-ccard__icon"><svg aria-hidden="true"><use href="#x-phone" /></svg></span><span><span class="x-ccard__k">Call</span><span class="x-ccard__v">+1 780-200-3136</span></span></a>
+                </div>
+              </div>
+              <div class="x-form x-reveal x-d1" id="x-bid" data-form="bid">
+                <form novalidate>
+                  <h3 class="x-form__title">Request to bid</h3>
+                  <p class="x-form__sub">Fields marked <span class="x-req">*</span> are required.</p>
+                  <div class="x-form__grid">
+                    <div class="x-field"><label for="b-company">Company <span class="x-req">*</span></label><input class="x-input" id="b-company" name="Company" autocomplete="organization" required /><p class="x-err" id="b-company-err">Enter your company name.</p></div>
+                    <div class="x-field"><label for="b-name">Contact name <span class="x-req">*</span></label><input class="x-input" id="b-name" name="Contact name" autocomplete="name" required /><p class="x-err" id="b-name-err">Enter a contact name.</p></div>
+                    <div class="x-field"><label for="b-email">Email <span class="x-req">*</span></label><input class="x-input" id="b-email" name="Email" type="email" autocomplete="email" required /><p class="x-err" id="b-email-err">Enter a valid email address.</p></div>
+                    <div class="x-field"><label for="b-phone">Phone <span class="x-req">*</span></label><input class="x-input" id="b-phone" name="Phone" type="tel" autocomplete="tel" required data-kind="phone" /><p class="x-err" id="b-phone-err">Enter a phone number with at least 10 digits.</p></div>
+                    <div class="x-field"><label for="b-project">Project name <span class="x-req">*</span></label><input class="x-input" id="b-project" name="Project name" required /><p class="x-err" id="b-project-err">Enter the project name.</p></div>
+                    <div class="x-field"><label for="b-location">Location <span class="x-req">*</span></label><input class="x-input" id="b-location" name="Location" placeholder="City or address" required /><p class="x-err" id="b-location-err">Enter the project location.</p></div>
+                    <div class="x-field x-field--full">
+                      <fieldset data-group="Scope" data-min="1" aria-describedby="b-scope-err">
+                        <legend>Scope <span class="x-req">*</span></legend>
+                        <div class="x-opts">
+                          <label class="x-opt"><input type="checkbox" name="Scope" value="Spray-applied fireproofing" /><span>Spray-applied fireproofing</span></label>
+                          <label class="x-opt"><input type="checkbox" name="Scope" value="Firestopping" /><span>Firestopping</span></label>
+                          <label class="x-opt"><input type="checkbox" name="Scope" value="Commercial insulation" /><span>Commercial insulation</span></label>
+                        </div>
+                      </fieldset>
+                      <p class="x-err" id="b-scope-err">Choose at least one scope.</p>
+                    </div>
+                    <div class="x-field"><label for="b-due">Bid due date <span class="x-req">*</span></label><input class="x-input" id="b-due" name="Bid due date" type="date" required /><p class="x-err" id="b-due-err">Choose the bid due date.</p></div>
+                    <div class="x-field x-field--full"><label for="b-notes">Notes <span class="x-opt-note">(optional)</span></label><textarea class="x-input" id="b-notes" name="Notes" placeholder="Schedule, assemblies, quantities…"></textarea></div>
+                    <div class="x-field x-field--full">
+                      <p class="x-note"><svg aria-hidden="true"><use href="#x-mail" /></svg><span>Email drawings to <a href="mailto:aceminsulation@gmail.com">aceminsulation@gmail.com</a></span></p>
+                    </div>
+                  </div>
+                  <p class="x-form__alert" role="alert"></p>
+                  <div class="x-form__foot">
+                    <button class="x-btn" type="submit">Send bid request <svg aria-hidden="true"><use href="#x-arrow" /></svg></button>
+                    <p class="x-form__fine">Opens your email app with the details filled in.</p>
+                  </div>
+                </form>
+                <div class="x-success" role="status" tabindex="-1">
+                  <div class="x-success__icon"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" /></svg></div>
+                  <h3>Bid request ready</h3>
+                  <p>Your email app should open with the details filled in. Hit send, then email your drawings to aceminsulation@gmail.com.</p>
+                  <div class="x-btns"><a class="x-btn x-btn--navy" data-mailto href="mailto:aceminsulation@gmail.com">Open email again</a><button class="x-textlink" type="button" data-reset style="background: none; border: 0; cursor: pointer">Start a new request</button></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- C5. CTA -->
+          <div class="x-sec x-cta x-blueprint x-dark">
+            <div class="x-wrap">
+              <div class="x-reveal">
+                <p class="x-eyebrow">Commercial projects</p>
+                <h2>Invite ACEM to bid.</h2>
+                <a class="x-cta__phone" href="tel:+17802003136"><svg aria-hidden="true"><use href="#x-phone" /></svg>+1 780-200-3136</a>
+              </div>
+              <div class="x-btns x-reveal x-d1">
+                <a class="x-btn" href="#/commercial" data-jump="x-bid">Invite ACEM to bid <svg aria-hidden="true"><use href="#x-arrow" /></svg></a>
+                <a class="x-btn x-btn--ghost" href="mailto:aceminsulation@gmail.com?subject=Drawings">Email drawings</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PROCESS -->
+        <section data-page="process" data-title="Our Process · ACEM Insulation" hidden>
+          <div class="x-banner">
+            <img class="x-banner__img" src="assessment.jpg" alt="Measuring the depth of attic insulation with a ruler" />
+            <div class="x-wrap">
+              <p class="x-eyebrow">How we work</p>
+              <h1>Our process</h1>
+              <nav aria-label="Breadcrumb" class="x-crumbs"><ol><li><a href="#/home">Home</a></li><li aria-current="page">Process</li></ol></nav>
+            </div>
+          </div>
+          <div class="x-sec">
+            <div class="x-wrap x-intro x-reveal">
+              <span class="x-intro__rule" aria-hidden="true"></span>
+              <div>
+                <p>Eight steps, every time: a free assessment with photos, a clear quote, a protected and careful install, and a before/after walkthrough so you can see exactly what changed.</p>
+                <div class="x-btns"><a class="x-btn" href="#/contact">Start with a free assessment <svg aria-hidden="true"><use href="#x-arrow" /></svg></a></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- P2. Timeline -->
+          <div class="x-sec" style="padding-top: 0">
+            <div class="x-wrap">
+              <div class="x-head x-reveal">
+                <p class="x-eyebrow">Step by step</p>
+                <h2>From first call to final walkthrough.</h2>
+              </div>
+              <ol class="x-tl">
+                <li class="x-tl__item x-reveal">
+                  <p class="x-tl__num" aria-hidden="true">01</p>
+                  <span class="x-tl__icon" aria-hidden="true"><svg><use href="#x-phone" /></svg></span>
+                  <div class="x-tl__body"><h3>Call or request a quote</h3><p>Phone, email or send the form. Tell us what's going on.</p></div>
+                </li>
+                <li class="x-tl__item x-reveal">
+                  <p class="x-tl__num" aria-hidden="true">02</p>
+                  <span class="x-tl__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17 17 3l4 4L7 21H3z" /><path d="M13 7l2 2M10 10l2 2M7 13l2 2" /></svg></span>
+                  <div class="x-tl__body"><h3>Free on-site assessment</h3><p>We check your attic or basement, measure the insulation depth and take photos.</p></div>
+                </li>
+                <li class="x-tl__item x-reveal">
+                  <p class="x-tl__num" aria-hidden="true">03</p>
+                  <span class="x-tl__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h10l4 4v14H5z" /><path d="M15 3v4h4M9 12h6M9 16h6" /></svg></span>
+                  <div class="x-tl__body"><h3>A clear explanation and quote</h3><p>What we found, what it needs, and what it costs. No pressure.</p></div>
+                </li>
+                <li class="x-tl__item x-reveal">
+                  <p class="x-tl__num" aria-hidden="true">04</p>
+                  <span class="x-tl__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="1" /><path d="M3 10h18M8 3v4M16 3v4" /></svg></span>
+                  <div class="x-tl__body"><h3>Scheduling</h3><p>Often within days.</p></div>
+                </li>
+                <li class="x-tl__item x-reveal">
+                  <p class="x-tl__num" aria-hidden="true">05</p>
+                  <span class="x-tl__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z" /><path d="M9 12l2 2 4-4" /></svg></span>
+                  <div class="x-tl__body"><h3>Protect</h3><p>Plastic over furniture, guards on stair edges, drop cloths on the floors.</p></div>
+                </li>
+                <li class="x-tl__item x-reveal">
+                  <p class="x-tl__num" aria-hidden="true">06</p>
+                  <span class="x-tl__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 3l9 8" /><path d="M5 9v12h14V9" /><path d="M8 15h8M8 18h8" /></svg></span>
+                  <div class="x-tl__body"><h3>Install</h3><p>The work itself, done by the crew that quoted it.</p></div>
+                </li>
+                <li class="x-tl__item x-reveal">
+                  <p class="x-tl__num" aria-hidden="true">07</p>
+                  <span class="x-tl__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v12H4z" /><circle cx="12" cy="13" r="3.5" /></svg></span>
+                  <div class="x-tl__body"><h3>Clean up and walkthrough</h3><p>A full cleanup, then a walkthrough with before and after photos.</p></div>
+                </li>
+                <li class="x-tl__item x-reveal">
+                  <p class="x-tl__num" aria-hidden="true">08</p>
+                  <span class="x-tl__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h10l4 4v14H5z" /><path d="M15 3v4h4" /><path d="M9 14l2 2 4-4" /></svg></span>
+                  <div class="x-tl__body"><h3>Rebate paperwork help</h3><p>If you need it, we help with the documentation rebate programs require. <a class="x-textlink" href="#/rebates" style="display: inline-flex">About rebates <svg aria-hidden="true"><use href="#x-arrow" /></svg></a></p></div>
+                </li>
+              </ol>
+            </div>
+          </div>
+
+          <!-- P3. Basement in two days -->
+          <div class="x-sec x-sec--grey">
+            <div class="x-wrap x-split">
+              <div class="x-split__media x-reveal">
+                <div class="x-zoom"><img src="attic.jpg" alt="An installer laying new insulation" /></div>
+                <p class="x-split__tag"><b>2 days</b>From tear-out to new vapour barrier.</p>
+              </div>
+              <div class="x-reveal x-d1">
+                <p class="x-eyebrow">Basement replacement</p>
+                <h2>Basement in two days.</h2>
+                <p class="x-lede">Old insulation out, the space dried overnight, new insulation in.</p>
+                <div class="x-days">
+                  <div class="x-day"><span><span class="x-day__k">Day</span><span class="x-day__n">1</span></span><div><h3>Removal</h3><p>Old insulation comes out, and a dehumidifier runs overnight.</p></div></div>
+                  <div class="x-day"><span><span class="x-day__k">Day</span><span class="x-day__n">2</span></span><div><h3>Install</h3><p>New insulation and vapour barrier go in.</p></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- P4. Quote -->
+          <div class="x-sec">
+            <div class="x-wrap">
+              <figure class="x-pull x-reveal">
+                <span class="x-pull__stars" aria-label="5 stars">★★★★★</span>
+                <blockquote>“He took and provided pictures of the current insulation in our attic and explained the reasoning of the cold second floor.”</blockquote>
+                <figcaption><svg aria-hidden="true"><use href="#x-g" /></svg>Google review</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <!-- P5. CTA -->
+          <div class="x-sec x-cta x-blueprint x-dark">
+            <div class="x-wrap">
+              <div class="x-reveal">
+                <p class="x-eyebrow">Step 01 starts here</p>
+                <h2>Book your free on-site assessment.</h2>
+                <a class="x-cta__phone" href="tel:+17802003136"><svg aria-hidden="true"><use href="#x-phone" /></svg>+1 780-200-3136</a>
+              </div>
+              <div class="x-btns x-reveal x-d1">
+                <a class="x-btn" href="#/contact">Request a free quote <svg aria-hidden="true"><use href="#x-arrow" /></svg></a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section data-page="about" data-title="About ACEM Insulation · Edmonton" hidden>
+          <div class="x-banner">
+            <img class="x-banner__img" src="assessment.jpg" alt="Measuring the depth of attic insulation with a ruler" />
+            <div class="x-wrap">
+              <p class="x-eyebrow">Owner-led in Edmonton</p>
+              <h1>About ACEM</h1>
+              <nav aria-label="Breadcrumb" class="x-crumbs"><ol><li><a href="#/home">Home</a></li><li aria-current="page">About</li></ol></nav>
+            </div>
+          </div>
+          <div class="x-sec">
+            <div class="x-wrap x-intro x-reveal">
+              <span class="x-intro__rule" aria-hidden="true"></span>
+              <div>
+                <p>ACEM Insulation is an owner-led Edmonton contractor. Arnold and his crew bring 10+ years in the trade to every attic, basement and commercial job, and the person who assesses your home is the one who stands behind the work.</p>
+                <div class="x-btns"><a class="x-btn" href="#/contact">Talk to Arnold <svg aria-hidden="true"><use href="#x-arrow" /></svg></a></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- A2. Story -->
+          <div class="x-sec" style="padding-top: 0">
+            <div class="x-wrap x-story">
+              <div class="x-reveal">
+                <p class="x-eyebrow">Our story</p>
+                <h2>Built on word of mouth.</h2>
+              </div>
+              <div class="x-story__body x-reveal x-d1">
+                <p class="x-lede" style="margin-top: 0">ACEM Insulation is owner-led by Arnold, whose crew has done insulation and fire-protection work for more than a decade.</p>
+                <p>ACEM Insulation Co. Ltd. was incorporated in Alberta on 16 September 2019 and is based in west Edmonton. The business grows mostly through word of mouth and family referrals.</p>
+                <ul class="x-ticks">
+                  <li><span><b>Homeowners</b>Attic top-ups and basement insulation.</span></li>
+                  <li><span><b>Landlords</b>Owners with multiple properties.</span></li>
+                  <li><span><b>Commercial general contractors</b>Fireproofing and firestopping subs.</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- A3. Values -->
+          <div class="x-sec x-sec--grey">
+            <div class="x-wrap">
+              <div class="x-head x-reveal">
+                <p class="x-eyebrow">What we stand for</p>
+                <h2>Four things you can count on.</h2>
+              </div>
+              <div class="x-services">
+                <article class="x-service x-lift x-reveal">
+                  <span class="x-service__num">01</span>
+                  <div class="x-service__icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="14" cy="14" r="9" /><path d="M21 21l7 7M10 14l3 3 5-6" /></svg></div>
+                  <h3>Honest assessments</h3>
+                  <p>We measure, photograph and tell you what the job actually needs.</p>
+                </article>
+                <article class="x-service x-lift x-reveal x-d1">
+                  <span class="x-service__num">02</span>
+                  <div class="x-service__icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 15 16 4l13 11" /><path d="M7 12v16h18V12" /><path d="M12 21l3 3 6-7" /></svg></div>
+                  <h3>Clean, respectful work</h3>
+                  <p>Your home covered before we start and cleaned before we leave.</p>
+                </article>
+                <article class="x-service x-lift x-reveal x-d2">
+                  <span class="x-service__num">03</span>
+                  <div class="x-service__icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 6h22v15H13l-6 5v-5H5z" /><path d="M10 12h12M10 16h8" /></svg></div>
+                  <h3>Responsive communication</h3>
+                  <p>Quick replies, from first call to final walkthrough.</p>
+                </article>
+                <article class="x-service x-lift x-reveal x-d3">
+                  <span class="x-service__num">04</span>
+                  <div class="x-service__icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4v24M6 9h20" /><path d="M6 9l-3 8a3 3 0 0 0 6 0zM26 9l-3 8a3 3 0 0 0 6 0z" /><path d="M11 28h10" /></svg></div>
+                  <h3>Fair pricing</h3>
+                  <p>A clear quote for the work you need, and nothing you don't.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <!-- A4. Milestones -->
+          <div class="x-sec">
+            <div class="x-wrap">
+              <div class="x-head x-reveal">
+                <p class="x-eyebrow">Milestones</p>
+                <h2>More than a decade in the trades.</h2>
+              </div>
+              <ol class="x-tl">
+                <li class="x-tl__item x-reveal">
+                  <p class="x-tl__when">10+ years</p>
+                  <span class="x-tl__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4l6 6-3 3-6-6zM11 7l-8 8 3 3 8-8" /><path d="M3 21h8" /></svg></span>
+                  <div class="x-tl__body"><h3>In the trades</h3><p>Arnold's crew doing insulation and fire-protection work.</p></div>
+                </li>
+                <li class="x-tl__item x-reveal">
+                  <p class="x-tl__when">Sept 2019</p>
+                  <span class="x-tl__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h10l4 4v14H5z" /><path d="M15 3v4h4M9 13h6M9 17h4" /></svg></span>
+                  <div class="x-tl__body"><h3>ACEM Insulation Co. Ltd. incorporated</h3><p>Incorporated in Alberta on 16 September 2019.</p></div>
+                </li>
+                <li class="x-tl__item x-reveal">
+                  <p class="x-tl__when">June 2024</p>
+                  <span class="x-tl__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V9l9-6 9 6v12" /><path d="M8 21v-7h8v7M3 21h18" /></svg></span>
+                  <div class="x-tl__body"><h3>Joined the Procore network</h3><p>Listed on the Procore construction network for commercial bids.</p></div>
+                </li>
+                <li class="x-tl__item is-now x-reveal">
+                  <p class="x-tl__when">Today</p>
+                  <span class="x-tl__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5-4.8-4.6 6.6-.9z" /></svg></span>
+                  <div class="x-tl__body"><h3>Rated 5.0★ from 45+ Google reviews</h3><p>And featured in The Edmontonite's “10 Best Insulation For Basement Walls In Edmonton”.</p></div>
+                </li>
+              </ol>
+            </div>
+          </div>
+
+          <!-- A5. Team -->
+          <div class="x-sec x-sec--grey">
+            <div class="x-wrap">
+              <div class="x-head x-reveal">
+                <p class="x-eyebrow">Who you'll meet</p>
+                <h2>The people who quote it do the work.</h2>
+              </div>
+              <div class="x-team">
+                <article class="x-member x-lift x-reveal">
+                  <span class="x-avatar" aria-hidden="true">A</span>
+                  <div>
+                    <h3>Arnold</h3>
+                    <span class="x-member__role">Owner</span>
+                    <p>Runs every job, from the assessment and quote to the final walkthrough.</p>
+                  </div>
+                </article>
+                <article class="x-member x-lift x-reveal x-d1">
+                  <span class="x-avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5" /><path d="M2.5 20a6.5 6.5 0 0 1 13 0" /><circle cx="17" cy="9" r="2.5" /><path d="M16 14.5a5 5 0 0 1 5.5 5" /></svg></span>
+                  <div>
+                    <h3>Our crew</h3>
+                    <span class="x-member__role">Insulation &amp; fire protection</span>
+                    <p>More than a decade of insulation and fire-protection work across homes and commercial sites.</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <!-- A6. Trust -->
+          <div class="x-sec">
+            <div class="x-wrap">
+              <ul class="x-trust x-reveal" aria-label="Credentials">
+                <li><span class="x-trust__fig">5.0<span>★</span></span><span class="x-trust__k">Google · 45+ reviews</span></li>
+                <li><span class="x-trust__fig">HomeStars</span><a class="x-textlink" href="https://www.homestars.com/profile/2977350-acem-insulation-co-ltd" target="_blank" rel="noopener">View profile <svg aria-hidden="true"><use href="#x-arrow" /></svg></a></li>
+                <li><span class="x-trust__fig">Procore</span><span class="x-trust__k">Construction network</span></li>
+                <li><span class="x-trust__fig">#2022172684</span><span class="x-trust__k">Alberta Corporation</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- A7. CTA -->
+          <div class="x-sec x-cta x-blueprint x-dark">
+            <div class="x-wrap">
+              <div class="x-reveal">
+                <p class="x-eyebrow">Meet Arnold in person</p>
+                <h2>Book a free, no-pressure assessment.</h2>
+                <a class="x-cta__phone" href="tel:+17802003136"><svg aria-hidden="true"><use href="#x-phone" /></svg>+1 780-200-3136</a>
+              </div>
+              <div class="x-btns x-reveal x-d1">
+                <a class="x-btn" href="#/contact">Book a free assessment <svg aria-hidden="true"><use href="#x-arrow" /></svg></a>
+                <a class="x-btn x-btn--ghost" href="#/commercial">Commercial enquiries</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- REVIEWS -->
+        <section data-page="reviews" data-title="Reviews · ACEM Insulation" hidden>
+          <div class="x-banner">
+            <img class="x-banner__img" src="hero.jpg" alt="An Edmonton house glowing warm on a winter evening" />
+            <div class="x-wrap">
+              <p class="x-eyebrow">5.0★ on Google · 45+ reviews</p>
+              <h1>Reviews</h1>
+              <nav aria-label="Breadcrumb" class="x-crumbs"><ol><li><a href="#/home">Home</a></li><li aria-current="page">Reviews</li></ol></nav>
+            </div>
+          </div>
+          <div class="x-sec">
+            <div class="x-wrap x-intro x-reveal">
+              <span class="x-intro__rule" aria-hidden="true"></span>
+              <div>
+                <p>Homeowners keep mentioning the same things: prompt replies, careful work, and a house left spotless. ACEM is rated 5.0★ on Google across 45+ reviews.</p>
+                <div class="x-btns"><a class="x-btn" href="#/contact">Book your free assessment <svg aria-hidden="true"><use href="#x-arrow" /></svg></a></div>
+                <div class="x-intro__links">
+                  <a class="x-textlink" href="https://www.homestars.com/profile/2977350-acem-insulation-co-ltd" target="_blank" rel="noopener">HomeStars profile <svg aria-hidden="true"><use href="#x-arrow" /></svg></a>
+                  <a class="x-textlink" href="https://www.facebook.com/p/ACEM-Insulation-Ltd-61565971727677" target="_blank" rel="noopener">Facebook <svg aria-hidden="true"><use href="#x-arrow" /></svg></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- V2. Rating -->
+          <div class="x-sec x-blueprint x-dark">
+            <div class="x-wrap">
+              <div class="x-head x-reveal">
+                <p class="x-eyebrow">The rating</p>
+                <h2>Five stars, review after review.</h2>
+              </div>
+              <div class="x-score">
+                <div class="x-score__card x-reveal" aria-label="Rated 5.0 stars on Google from 45+ reviews">
+                  <span class="x-score__fig">5.0</span>
+                  <span><span class="x-score__stars" aria-hidden="true">★★★★★</span><span class="x-score__meta">45+ reviews</span><span class="x-score__src">Google</span></span>
+                </div>
+                <div class="x-score__card x-reveal x-d1" aria-label="Rated 5.0 across 50 Google reviews on Birdeye">
+                  <span class="x-score__fig">5.0</span>
+                  <span><span class="x-score__stars" aria-hidden="true">★★★★★</span><span class="x-score__meta">50 Google reviews</span><span class="x-score__src">Birdeye</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- V3. Quotes -->
+          <div class="x-sec x-sec--grey">
+            <div class="x-wrap">
+              <div class="x-head x-reveal">
+                <p class="x-eyebrow">In their words</p>
+                <h2>What homeowners say.</h2>
+              </div>
+              <div class="x-masonry">
+                <figure class="x-quote x-reveal">
+                  <span class="x-quote__stars" aria-label="5 stars">★★★★★</span>
+                  <blockquote>“Arnold did the attic insulation top-up for both my main home and another property… we immediately noticed the difference in energy efficiency and comfort through both winter and summer. He even fixed some spots that had lost insulation due to wind.”</blockquote>
+                  <figcaption><svg aria-hidden="true"><use href="#x-g" /></svg>Google review<span class="x-quote__date">Nov 2025</span></figcaption>
+                </figure>
+                <figure class="x-quote x-reveal">
+                  <span class="x-quote__stars" aria-label="5 stars">★★★★★</span>
+                  <blockquote>“Arnold was thorough and professional in our insulation project. He is quick to respond and extremely helpful.”</blockquote>
+                  <figcaption><svg aria-hidden="true"><use href="#x-g" /></svg>Google review<span class="x-quote__date">Oct 2025</span></figcaption>
+                </figure>
+                <figure class="x-quote x-reveal">
+                  <span class="x-quote__stars" aria-label="5 stars">★★★★★</span>
+                  <blockquote>“Arnold was very prompt and reasonable with pricing… He came to check on Friday and did the work on Monday.”</blockquote>
+                  <figcaption><svg aria-hidden="true"><use href="#x-g" /></svg>Google review<span class="x-quote__date">Oct 2025</span></figcaption>
+                </figure>
+                <figure class="x-quote x-reveal">
+                  <span class="x-quote__stars" aria-label="5 stars">★★★★★</span>
+                  <blockquote>“Arnold and his team had it done in two days… took great care to do the job right and left the place spotless.”</blockquote>
+                  <figcaption><svg aria-hidden="true"><use href="#x-g" /></svg>Google review<span class="x-quote__date">Sep 2025</span></figcaption>
+                </figure>
+                <figure class="x-quote x-reveal">
+                  <span class="x-quote__stars" aria-label="5 stars">★★★★★</span>
+                  <blockquote>“They're very friendly, punctual, professional and answered all our concerns and questions!”</blockquote>
+                  <figcaption><svg aria-hidden="true"><use href="#x-g" /></svg>Google review<span class="x-quote__date">Aug 2025</span></figcaption>
+                </figure>
+                <figure class="x-quote x-reveal">
+                  <span class="x-quote__stars" aria-label="5 stars">★★★★★</span>
+                  <blockquote>“ACEM was very professional keeping the rooms clean by taping off furniture with plastic and placing guards on the stairwell edges.”</blockquote>
+                  <figcaption><svg aria-hidden="true"><use href="#x-g" /></svg>Google review<span class="x-quote__date">Jul 2025</span></figcaption>
+                </figure>
+                <figure class="x-quote x-reveal">
+                  <span class="x-quote__stars" aria-label="5 stars">★★★★★</span>
+                  <blockquote>“They did a fantastic job for a great price!”</blockquote>
+                  <figcaption><svg aria-hidden="true"><use href="#x-g" /></svg>Google review<span class="x-quote__date">Jul 2025</span></figcaption>
+                </figure>
+                <figure class="x-quote x-reveal">
+                  <span class="x-quote__stars" aria-label="5 stars">★★★★★</span>
+                  <blockquote>“Despite short notice, he and his teammate delivered a clean, high-quality job at a reasonable price.”</blockquote>
+                  <figcaption><svg aria-hidden="true"><use href="#x-g" /></svg>Google review<span class="x-quote__date">Jul 2025</span></figcaption>
+                </figure>
+                <figure class="x-quote x-reveal">
+                  <span class="x-quote__stars" aria-label="5 stars">★★★★★</span>
+                  <blockquote>“Very prompt in getting back to me. Also did a very clean job… I couldn't tell they had even been here, except for the difference in temperature.”</blockquote>
+                  <figcaption><svg aria-hidden="true"><use href="#x-g" /></svg>Google review<span class="x-quote__date">2026</span></figcaption>
+                </figure>
+                <figure class="x-quote x-reveal">
+                  <span class="x-quote__stars" aria-label="5 stars">★★★★★</span>
+                  <blockquote>“Friendly, professional, and prompt service with quality work and competitive pricing. Everything you want from a contractor.”</blockquote>
+                  <figcaption><svg aria-hidden="true"><use href="#x-g" /></svg>Google review<span class="x-quote__date">2026</span></figcaption>
+                </figure>
+              </div>
+              <div class="x-btns x-reveal">
+                <a class="x-btn" href="https://www.google.com/maps/search/?api=1&amp;query=ACEM+Insulation+Ltd+Edmonton" target="_blank" rel="noopener">Read more on Google <svg aria-hidden="true"><use href="#x-arrow" /></svg></a>
+                <a class="x-btn x-btn--navy" href="https://www.homestars.com/profile/2977350-acem-insulation-co-ltd" target="_blank" rel="noopener">HomeStars</a>
+                <a class="x-btn x-btn--navy" href="https://www.google.com/maps/search/?api=1&amp;query=ACEM+Insulation+Ltd+Edmonton" target="_blank" rel="noopener">Leave a review</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- V4. CTA -->
+          <div class="x-sec x-cta x-blueprint x-dark">
+            <div class="x-wrap">
+              <div class="x-reveal">
+                <p class="x-eyebrow">Free, no-pressure assessment</p>
+                <h2>See why they keep saying it.</h2>
+                <a class="x-cta__phone" href="tel:+17802003136"><svg aria-hidden="true"><use href="#x-phone" /></svg>+1 780-200-3136</a>
+              </div>
+              <div class="x-btns x-reveal x-d1">
+                <a class="x-btn" href="#/contact">Book your free assessment <svg aria-hidden="true"><use href="#x-arrow" /></svg></a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- REBATES -->
+        <section data-page="rebates" data-title="Insulation Rebates · ACEM Insulation" hidden>
+          <div class="x-banner">
+            <img class="x-banner__img" src="basement.jpg" alt="Insulation installed along basement walls" />
+            <div class="x-wrap">
+              <p class="x-eyebrow">Rebates</p>
+              <h1>Insulation rebates</h1>
+              <nav aria-label="Breadcrumb" class="x-crumbs"><ol><li><a href="#/home">Home</a></li><li aria-current="page">Rebates</li></ol></nav>
+            </div>
+          </div>
+          <div class="x-sec">
+            <div class="x-wrap x-intro x-reveal">
+              <span class="x-intro__rule" aria-hidden="true"></span>
+              <div>
+                <p>Many energy-efficiency rebate and grant programs require your attic or walls to reach set insulation levels, and the programs change. We help you understand what's needed, document the work with before and after photos, and get your home to the required level.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- B2. Steps -->
+          <div class="x-sec x-blueprint x-dark">
+            <div class="x-wrap">
+              <div class="x-head x-reveal">
+                <p class="x-eyebrow">How it works</p>
+                <h2>Three steps to a rebate-ready home.</h2>
+              </div>
+              <div class="x-steps x-steps--3">
+                <div class="x-step x-reveal"><p class="x-step__num">01</p><h3>Check current programs</h3><p>You or your energy advisor confirm which program you're applying to and what it requires.</p></div>
+                <div class="x-step x-reveal x-d1"><p class="x-step__num">02</p><h3>ACEM assesses and documents</h3><p>We measure what you have now and photograph it.</p></div>
+                <div class="x-step x-reveal x-d2"><p class="x-step__num">03</p><h3>We install to the required level</h3><p>Then you get before and after photos and an invoice for your claim.</p></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- B3. Disclaimer -->
+          <div class="x-sec">
+            <div class="x-wrap">
+              <div class="x-teaser x-reveal" role="note">
+                <div class="x-teaser__icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="16" r="12" /><path d="M16 10v8M16 22v.5" /></svg></div>
+                <div>
+                  <p class="x-eyebrow">Please note</p>
+                  <h2>Program availability and amounts change.</h2>
+                  <p>Confirm eligibility with the program provider before starting work. ACEM does not administer any rebate program.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- B4. FAQ -->
+          <div class="x-sec x-sec--grey">
+            <div class="x-wrap">
+              <div class="x-head x-reveal">
+                <p class="x-eyebrow">Questions</p>
+                <h2>Rebate FAQ</h2>
+              </div>
+              <div class="x-faqs x-reveal">
+                <details class="x-faq">
+                  <summary>Do you handle the application?<span class="x-faq__icon" aria-hidden="true"></span></summary>
+                  <p class="x-faq__a">We provide the documentation your application needs.</p>
+                </details>
+                <details class="x-faq">
+                  <summary>Do I need an energy audit?<span class="x-faq__icon" aria-hidden="true"></span></summary>
+                  <p class="x-faq__a">Some programs require one before and after the work. Check yours.</p>
+                </details>
+                <details class="x-faq">
+                  <summary>Can you top up to the required R-value?<span class="x-faq__icon" aria-hidden="true"></span></summary>
+                  <p class="x-faq__a">Yes.</p>
+                </details>
+              </div>
+            </div>
+          </div>
+
+          <!-- B5. CTA -->
+          <div class="x-sec x-cta x-blueprint x-dark">
+            <div class="x-wrap">
+              <div class="x-reveal">
+                <p class="x-eyebrow">Applying for a rebate?</p>
+                <h2>Find out where your insulation stands.</h2>
+                <a class="x-cta__phone" href="tel:+17802003136"><svg aria-hidden="true"><use href="#x-phone" /></svg>+1 780-200-3136</a>
+              </div>
+              <div class="x-btns x-reveal x-d1">
+                <a class="x-btn" href="#/contact">Book a free assessment <svg aria-hidden="true"><use href="#x-arrow" /></svg></a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section data-page="contact" data-title="Contact · Free Assessment · ACEM Insulation" hidden>
+          <div class="x-banner">
+            <img class="x-banner__img" src="clean.jpg" alt="A hallway covered in protective plastic before work begins" />
+            <div class="x-wrap">
+              <p class="x-eyebrow">Free assessment</p>
+              <h1>Contact us</h1>
+              <nav aria-label="Breadcrumb" class="x-crumbs"><ol><li><a href="#/home">Home</a></li><li aria-current="page">Contact</li></ol></nav>
+            </div>
+          </div>
+          <div class="x-sec">
+            <div class="x-wrap x-formgrid">
+              <div class="x-reveal">
+                <p class="x-eyebrow">Get in touch</p>
+                <h2>Book a free assessment or ask for a quote.</h2>
+                <p class="x-lede">Call, email or send the form. Homeowners and commercial enquiries both welcome.</p>
+                <div class="x-ccards">
+                  <a class="x-ccard" href="tel:+17802003136"><span class="x-ccard__icon"><svg aria-hidden="true"><use href="#x-phone" /></svg></span><span><span class="x-ccard__k">Phone</span><span class="x-ccard__v">+1 780-200-3136</span></span></a>
+                  <a class="x-ccard" href="mailto:aceminsulation@gmail.com"><span class="x-ccard__icon"><svg aria-hidden="true"><use href="#x-mail" /></svg></span><span><span class="x-ccard__k">Email</span><span class="x-ccard__v">aceminsulation@gmail.com</span></span></a>
+                  <div class="x-ccard"><span class="x-ccard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg></span><span><span class="x-ccard__k">Hours</span><dl class="x-ccard__hours"><dt>Mon–Sat</dt><dd>8 AM–5 PM</dd><dt>Sun</dt><dd>Closed</dd></dl></span></div>
+                  <div class="x-ccard"><span class="x-ccard__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z" /><circle cx="12" cy="10" r="2.5" /></svg></span><span><span class="x-ccard__k">Service area</span><span class="x-ccard__v">Edmonton, St. Albert, Spruce Grove, Stony Plain, Sherwood Park</span></span></div>
+                  <a class="x-ccard" href="https://www.facebook.com/p/ACEM-Insulation-Ltd-61565971727677" target="_blank" rel="noopener"><span class="x-ccard__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 8.5V6.8c0-.8.2-1.3 1.4-1.3H17V2.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1v1.9H8v3.2h2.6V22H14v-10.3h2.7l.4-3.2z" /></svg></span><span><span class="x-ccard__k">Facebook</span><span class="x-ccard__v">ACEM Insulation Ltd</span></span></a>
+                </div>
+              </div>
+
+              <div class="x-form x-reveal x-d1" id="x-quote" data-form="quote">
+                <form novalidate>
+                  <h3 class="x-form__title">Request a free quote</h3>
+                  <p class="x-form__sub">Fields marked <span class="x-req">*</span> are required.</p>
+                  <div class="x-form__grid">
+                    <div class="x-field x-field--full">
+                      <fieldset data-group="I'm a" data-min="1" aria-describedby="q-who-err">
+                        <legend>I'm a <span class="x-req">*</span></legend>
+                        <div class="x-opts">
+                          <label class="x-opt"><input type="radio" name="I'm a" value="Homeowner" /><span>Homeowner</span></label>
+                          <label class="x-opt"><input type="radio" name="I'm a" value="General contractor" /><span>General contractor</span></label>
+                          <label class="x-opt"><input type="radio" name="I'm a" value="Property manager" /><span>Property manager</span></label>
+                        </div>
+                      </fieldset>
+                      <p class="x-err" id="q-who-err">Tell us who you are.</p>
+                    </div>
+                    <div class="x-field x-field--full">
+                      <fieldset data-group="Service" data-min="1" aria-describedby="q-svc-err">
+                        <legend>Service <span class="x-req">*</span></legend>
+                        <div class="x-opts">
+                          <label class="x-opt"><input type="radio" name="Service" value="Attic top-up" /><span>Attic top-up</span></label>
+                          <label class="x-opt"><input type="radio" name="Service" value="Blown-in" /><span>Blown-in</span></label>
+                          <label class="x-opt"><input type="radio" name="Service" value="Basement" /><span>Basement</span></label>
+                          <label class="x-opt"><input type="radio" name="Service" value="Fireproofing" /><span>Fireproofing</span></label>
+                          <label class="x-opt"><input type="radio" name="Service" value="Firestopping" /><span>Firestopping</span></label>
+                          <label class="x-opt"><input type="radio" name="Service" value="Not sure" /><span>Not sure</span></label>
+                        </div>
+                      </fieldset>
+                      <p class="x-err" id="q-svc-err">Choose a service, or "Not sure".</p>
+                    </div>
+                    <div class="x-field"><label for="q-name">Name <span class="x-req">*</span></label><input class="x-input" id="q-name" name="Name" autocomplete="name" required /><p class="x-err" id="q-name-err">Enter your name.</p></div>
+                    <div class="x-field"><label for="q-type">Property type <span class="x-req">*</span></label>
+                      <select class="x-input" id="q-type" name="Property type" required>
+                        <option value="">Choose one</option>
+                        <option>House</option>
+                        <option>Townhouse / duplex</option>
+                        <option>Condo / multi-family</option>
+                        <option>Commercial building</option>
+                        <option>Other</option>
+                      </select><p class="x-err" id="q-type-err">Choose a property type.</p></div>
+                    <div class="x-field"><label for="q-phone">Phone</label><input class="x-input" id="q-phone" name="Phone" type="tel" autocomplete="tel" data-kind="phone" /><p class="x-err" id="q-phone-err">Enter a phone number with at least 10 digits.</p></div>
+                    <div class="x-field"><label for="q-email">Email</label><input class="x-input" id="q-email" name="Email" type="email" autocomplete="email" /><p class="x-err" id="q-email-err">Enter a valid email address.</p></div>
+                    <div class="x-field"><label for="q-size">Approx. size <span class="x-opt-note">(optional)</span></label><input class="x-input" id="q-size" name="Approx. size" placeholder="e.g. 1,800 sq ft" /></div>
+                    <div class="x-field"><label for="q-postal">Postal code <span class="x-req">*</span></label><input class="x-input" id="q-postal" name="Postal code" autocomplete="postal-code" placeholder="T5J 0N3" required data-kind="postal" /><p class="x-err" id="q-postal-err">Enter a postal code like T5J 0N3.</p></div>
+                    <div class="x-field x-field--full">
+                      <fieldset data-group="Preferred contact" data-min="1" aria-describedby="q-pref-err">
+                        <legend>Preferred contact <span class="x-req">*</span></legend>
+                        <div class="x-opts">
+                          <label class="x-opt"><input type="radio" name="Preferred contact" value="Phone call" /><span>Phone call</span></label>
+                          <label class="x-opt"><input type="radio" name="Preferred contact" value="Text" /><span>Text</span></label>
+                          <label class="x-opt"><input type="radio" name="Preferred contact" value="Email" /><span>Email</span></label>
+                        </div>
+                      </fieldset>
+                      <p class="x-err" id="q-pref-err">Choose how we should reach you.</p>
+                    </div>
+                    <div class="x-field x-field--full"><label for="q-msg">Message <span class="x-opt-note">(optional)</span></label><textarea class="x-input" id="q-msg" name="Message" placeholder="Cold rooms, the age of the home, project details…"></textarea></div>
+                    <div class="x-field x-field--full">
+                      <label class="x-check"><input type="checkbox" name="Rebate help" value="Yes" /><span><b>I'd like help with rebate requirements</b></span></label>
+                    </div>
+                  </div>
+                  <p class="x-form__alert" role="alert"></p>
+                  <div class="x-form__foot">
+                    <button class="x-btn" type="submit">Send my request <svg aria-hidden="true"><use href="#x-arrow" /></svg></button>
+                    <p class="x-form__fine">Opens your email app with the details filled in. Give us a phone or email so we can reply.</p>
+                  </div>
+                </form>
+                <div class="x-success" role="status" tabindex="-1">
+                  <div class="x-success__icon"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" /></svg></div>
+                  <h3>Thanks, your request is ready</h3>
+                  <p>Your email app should open with everything filled in. Hit send and we'll be in touch, or call +1 780-200-3136.</p>
+                  <div class="x-btns"><a class="x-btn x-btn--navy" data-mailto href="mailto:aceminsulation@gmail.com">Open email again</a><button class="x-textlink" type="button" data-reset style="background: none; border: 0; cursor: pointer">Start a new request</button></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Map -->
+          <div class="x-map">
+            <iframe src="https://maps.google.com/maps?q=Edmonton%2C%20AB&amp;output=embed" title="Map of Edmonton, AB" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </section>
+      </main>
+      <footer class="x-foot">
+        <div class="x-foot__strip">
+          <div class="x-wrap">
+            <div>
+              <h2>Cold rooms? Let's fix that.</h2>
+              <p>Free attic assessments across Edmonton &amp; area.</p>
+            </div>
+            <a class="x-btn x-btn--navy" href="#/contact">Free Assessment <svg aria-hidden="true"><use href="#x-arrow" /></svg></a>
+          </div>
+        </div>
+        <div class="x-wrap x-foot__main">
+          <div class="x-foot__brand">
+            <a class="x-logo" href="#/home" aria-label="ACEM Insulation, home"><svg aria-hidden="true"><use href="#x-wordmark" /></svg></a>
+            <p>Owner-led insulation and fireproofing in Edmonton, Alberta. Arnold and his crew, start to finish.</p>
+            <div class="x-foot__social">
+              <a href="https://www.facebook.com/p/ACEM-Insulation-Ltd-61565971727677" target="_blank" rel="noopener" aria-label="ACEM Insulation on Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 8.5V6.8c0-.8.2-1.3 1.4-1.3H17V2.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1v1.9H8v3.2h2.6V22H14v-10.3h2.7l.4-3.2z" /></svg></a>
+              <a href="https://www.homestars.com/profile/2977350-acem-insulation-co-ltd" target="_blank" rel="noopener" aria-label="ACEM Insulation on HomeStars"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5-4.8-4.6 6.6-.9z" /></svg></a>
+            </div>
+          </div>
+          <div>
+            <h3>Services</h3>
+            <ul>
+              <li><a href="#/residential">Attic top-ups</a></li>
+              <li><a href="#/residential">Blown-in insulation</a></li>
+              <li><a href="#/residential">Basement insulation</a></li>
+              <li><a href="#/commercial">Fireproofing</a></li>
+              <li><a href="#/commercial">Firestopping</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Company</h3>
+            <ul>
+              <li><a href="#/process">Process</a></li>
+              <li><a href="#/about">About</a></li>
+              <li><a href="#/reviews">Reviews</a></li>
+              <li><a href="#/rebates">Rebates</a></li>
+              <li><a href="#/contact">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Contact</h3>
+            <ul>
+              <li><a href="tel:+17802003136">+1 780-200-3136</a></li>
+              <li><a href="mailto:aceminsulation@gmail.com">aceminsulation@gmail.com</a></li>
+            </ul>
+            <dl class="x-foot__hours" style="margin-top: 14px">
+              <dt>Mon–Sat</dt><dd>8:00 AM–5:00 PM</dd>
+              <dt>Sun</dt><dd>Closed</dd>
+            </dl>
+            <p class="x-foot__area"><b style="color: #fff">Service area:</b> Edmonton, St. Albert, Spruce Grove, Stony Plain, Sherwood Park</p>
+          </div>
+        </div>
+        <div class="x-foot__legal">
+          <div class="x-wrap">
+            <p>ACEM Insulation Co. Ltd. · Alberta Corporation #2022172684 · Edmonton, AB · © 2026</p>
+            <p>Developed by <a href="https://teta.dpdns.org" target="_blank" rel="noopener">Teta Digitals</a></p>
+          </div>
+        </div>
+      </footer>
+
+      <a class="x-fab" href="tel:+17802003136" aria-label="Call ACEM Insulation at +1 780-200-3136"><svg aria-hidden="true"><use href="#x-phone" /></svg>Call now</a>
+    </div>
+    <script src="hark.js"></script>
+    <script>
+      (function () {
+        var routes = ["home", "residential", "commercial", "process", "about", "reviews", "rebates", "contact"];
+        var pages = {};
+        document.querySelectorAll("[data-page]").forEach(function (p) { pages[p.getAttribute("data-page")] = p; });
+        var mast = document.getElementById("x-mast");
+        var burger = mast.querySelector(".x-burger");
+        var navLinks = mast.querySelectorAll(".x-menu a");
+        var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        /* Header: solid on scroll, menu offset */
+        function onScroll() { mast.classList.toggle("is-solid", window.scrollY > 40); }
+        function setMenuTop() { mast.style.setProperty("--x-menu-top", mast.offsetHeight + "px"); }
+        window.addEventListener("scroll", onScroll, { passive: true });
+        window.addEventListener("resize", setMenuTop);
+        mast.addEventListener("transitionend", setMenuTop);
+
+        function closeMenu() { mast.classList.remove("is-open"); burger.setAttribute("aria-expanded", "false"); burger.setAttribute("aria-label", "Open menu"); }
+        burger.addEventListener("click", function () {
+          var open = !mast.classList.contains("is-open");
+          setMenuTop();
+          mast.classList.toggle("is-open", open);
+          burger.setAttribute("aria-expanded", String(open));
+          burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+        });
+        document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeMenu(); });
+
+        /* Reveal + counters */
+        var io = "IntersectionObserver" in window ? new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            if (!en.isIntersecting) return;
+            en.target.classList.add("is-in");
+            en.target.querySelectorAll("[data-count]").forEach(count);
+            io.unobserve(en.target);
+          });
+        }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }) : null;
+
+        function count(el) {
+          if (el.dataset.done) return;
+          el.dataset.done = "1";
+          var end = parseFloat(el.dataset.count), dec = parseInt(el.dataset.dec || "0", 10);
+          if (reduce) { el.textContent = end.toFixed(dec); return; }
+          var t0 = null, dur = 1600;
+          function tick(t) {
+            if (!t0) t0 = t;
+            var k = Math.min((t - t0) / dur, 1), e = 1 - Math.pow(1 - k, 3);
+            el.textContent = (end * e).toFixed(dec);
+            if (k < 1) requestAnimationFrame(tick);
+          }
+          requestAnimationFrame(tick);
+        }
+
+        function arm(page) {
+          var items = page.querySelectorAll(".x-reveal, .x-step");
+          items.forEach(function (el) {
+            if (el.classList.contains("is-in")) return;
+            if (io) io.observe(el);
+            else { el.classList.add("is-in"); el.querySelectorAll("[data-count]").forEach(count); }
+          });
+        }
+
+        /* Router */
+        function route() {
+          var name = (location.hash.match(/^#\/([\w-]+)/) || [])[1];
+          if (routes.indexOf(name) === -1) {
+            history.replaceState(null, "", "#/home");
+            name = "home";
+          }
+          routes.forEach(function (r) { if (pages[r]) pages[r].hidden = r !== name; });
+          var page = pages[name];
+          document.title = page.getAttribute("data-title").replace(/&amp;/g, "&");
+          navLinks.forEach(function (a) {
+            if (a.getAttribute("href") === "#/" + name && !a.classList.contains("x-btn")) a.setAttribute("aria-current", "page");
+            else a.removeAttribute("aria-current");
+          });
+          closeMenu();
+          window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+          onScroll();
+          arm(page);
+        }
+        window.addEventListener("hashchange", route);
+        document.querySelectorAll("[data-top]").forEach(function (a) {
+          a.addEventListener("click", function (e) {
+            if (location.hash === a.getAttribute("href")) { e.preventDefault(); window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" }); }
+          });
+        });
+        /* In-page jumps (keep hash routes intact) */
+        document.querySelectorAll("[data-jump]").forEach(function (a) {
+          a.addEventListener("click", function (e) {
+            var target = document.getElementById(a.getAttribute("data-jump"));
+            if (!target) return;
+            e.preventDefault();
+            if (location.hash !== a.getAttribute("href")) history.pushState(null, "", a.getAttribute("href"));
+            target.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+            var first = target.querySelector("input, select, textarea");
+            if (first) setTimeout(function () { first.focus({ preventScroll: true }); }, reduce ? 0 : 600);
+          });
+        });
+
+        /* Forms: validate, success state, prefilled mailto */
+        var MAIL = "aceminsulation@gmail.com";
+        var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+        var postalRe = /^[ABCEGHJ-NPRSTVXY]\d[ABCEGHJ-NPRSTV-Z][ -]?\d[ABCEGHJ-NPRSTV-Z]\d$/i;
+
+        function setBad(field, bad, msg) {
+          var wrap = field.closest(".x-field");
+          var err = wrap && wrap.querySelector(".x-err");
+          if (err && msg) err.textContent = msg;
+          if (wrap) wrap.classList.toggle("is-bad", bad);
+          if (field.tagName === "FIELDSET") field.classList.toggle("x-fieldset-bad", bad);
+          else {
+            field.setAttribute("aria-invalid", bad ? "true" : "false");
+            if (err) { if (bad) field.setAttribute("aria-describedby", err.id); else field.removeAttribute("aria-describedby"); }
+          }
+        }
+
+        function checkInput(el) {
+          var v = el.value.trim();
+          var bad = false;
+          if (el.required && !v) bad = true;
+          else if (v && el.type === "email" && !emailRe.test(v)) bad = true;
+          else if (v && el.dataset.kind === "phone" && v.replace(/\D/g, "").length < 10) bad = true;
+          else if (v && el.dataset.kind === "postal" && !postalRe.test(v)) bad = true;
+          return bad;
+        }
+
+        function wireForm(box) {
+          var form = box.querySelector("form");
+          var alertBox = form.querySelector(".x-form__alert");
+          var success = box.querySelector(".x-success");
+          var again = box.querySelector("[data-mailto]");
+          var isQuote = box.dataset.form === "quote";
+          var touched = false;
+
+          function validate() {
+            var firstBad = null, count = 0;
+            form.querySelectorAll("input.x-input, select.x-input, textarea.x-input").forEach(function (el) {
+              var bad = checkInput(el);
+              var err = el.closest(".x-field").querySelector(".x-err");
+              setBad(el, bad, err && err.dataset.msg);
+              if (bad) { count++; if (!firstBad) firstBad = el; }
+            });
+            form.querySelectorAll("fieldset[data-group]").forEach(function (fs) {
+              var bad = !fs.querySelector("input:checked");
+              setBad(fs, bad);
+              if (bad) { count++; if (!firstBad) firstBad = fs.querySelector("input"); }
+            });
+            if (isQuote) {
+              var ph = form.querySelector("#q-phone"), em = form.querySelector("#q-email");
+              if (!ph.value.trim() && !em.value.trim()) {
+                setBad(ph, true, "Add a phone number or an email.");
+                setBad(em, true, "Add a phone number or an email.");
+                count++;
+                if (!firstBad || firstBad.compareDocumentPosition(ph) & Node.DOCUMENT_POSITION_PRECEDING) firstBad = ph;
+              }
+            }
+            alertBox.textContent = count ? "Please fix " + count + (count === 1 ? " field" : " fields") + " highlighted below." : "";
+            alertBox.classList.toggle("is-on", !!count);
+            return firstBad;
+          }
+
+          form.querySelectorAll(".x-err").forEach(function (e) { e.dataset.msg = e.textContent; });
+
+          form.addEventListener("input", function () { if (touched) validate(); });
+          form.addEventListener("change", function () { if (touched) validate(); });
+
+          form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            touched = true;
+            var bad = validate();
+            if (bad) { bad.focus(); return; }
+
+            var lines = [], seen = {};
+            form.querySelectorAll("input, select, textarea").forEach(function (el) {
+              var n = el.name;
+              if (!n || seen[n]) return;
+              var v;
+              if (el.type === "radio" || el.type === "checkbox") {
+                var picked = Array.prototype.map.call(form.querySelectorAll('input[name="' + n + '"]:checked'), function (i) { return i.value; });
+                if (n === "Rebate help") { v = picked.length ? "Yes, I'd like help with rebate requirements" : ""; }
+                else v = picked.join(", ");
+              } else v = el.value.trim();
+              seen[n] = 1;
+              if (v) lines.push((n === "Rebate help" ? "Rebates" : n) + ": " + v);
+            });
+            var subject;
+            if (isQuote) {
+              var svc = (form.querySelector('input[name="Service"]:checked') || {}).value;
+              subject = "Quote request: " + svc + " (" + form.querySelector("#q-postal").value.trim().toUpperCase() + ")";
+            } else {
+              subject = "Bid invitation: " + form.querySelector("#b-project").value.trim() + " (" + form.querySelector("#b-company").value.trim() + ")";
+              lines.push("", "Drawings to follow by email to " + MAIL + ".");
+            }
+            var body = (isQuote ? "Hi ACEM,\n\nI'd like a free quote.\n\n" : "Hi ACEM,\n\nWe'd like to invite you to bid.\n\n") + lines.join("\n");
+            var href = "mailto:" + MAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+            again.setAttribute("href", href);
+            box.classList.add("is-sent");
+            box.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+            success.focus({ preventScroll: true });
+            window.location.href = href;
+          });
+
+          box.querySelector("[data-reset]").addEventListener("click", function () {
+            form.reset();
+            touched = false;
+            form.querySelectorAll(".is-bad").forEach(function (w) { w.classList.remove("is-bad"); });
+            form.querySelectorAll("[aria-invalid]").forEach(function (el) { el.setAttribute("aria-invalid", "false"); el.removeAttribute("aria-describedby"); });
+            form.querySelectorAll(".x-fieldset-bad").forEach(function (f) { f.classList.remove("x-fieldset-bad"); });
+            alertBox.classList.remove("is-on");
+            box.classList.remove("is-sent");
+            var first = form.querySelector("input");
+            if (first) first.focus();
+          });
+        }
+        document.querySelectorAll("[data-form]").forEach(wireForm);
+
+        if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+        route();
+        setMenuTop();
+      })();
+    </script>
+  </body>
+</html>
